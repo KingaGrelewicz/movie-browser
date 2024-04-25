@@ -4,11 +4,11 @@ import Navigation from "./common/Navigation";
 
 function App() {
   return (
-    <Container>
-      <Globalstyle />
-      <Navigation />
-      <header>Movies Browser</header>
-    </Container>
+    // <Container>
+    //   <Globalstyle />
+    //   <Navigation />
+    //   <header>Movies Browser</header>
+    // </Container>
   );
 }
 
