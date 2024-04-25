@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Movies Browser App
+
+Welcome to the captivating world of movies! On the website, you can explore a wide range of films and actors. Browse through the most popular titles, delve into the secrets of your favorite movies, and get to know their characters. Click on a movie poster icon or an actor's photo to dive into the details and learn more. We invite you to explore the cinematic universe on the platform!
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+You can check out the themo here [Demo](https://kingagrelewicz.github.io/movies-browser/)
 
 ## Available Scripts
 
@@ -13,11 +17,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
