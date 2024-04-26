@@ -12,7 +12,7 @@ const BackdropView = () => {
       <BackdropWrapper>
         <BackdropImg src={backdropUrl} alt="Backdrop Poster" />
         <BackdropHeader>{movieDetails.details.title}</BackdropHeader>
-        <Rating />
+        <Rating color={({ theme }) => theme.color.white} />
       </BackdropWrapper>
     </>
   );

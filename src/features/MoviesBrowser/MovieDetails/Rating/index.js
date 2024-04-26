@@ -9,11 +9,11 @@ import {
 } from "./styled";
 import starImg from "./image/star.png";
 
-const Rating = () => {
+const Rating = ({ color }) => {
   const movieDetails = useSelector(selectMovieDetailsSlice);
 
   return (
-    <RatingWrapper>
+    <RatingWrapper color={color}>
       <RatingImage src={starImg} alt="Rating Image" />
       <RatingAverage>
         {movieDetails.details.vote_average.toFixed(1)}{" "}

@@ -6,12 +6,12 @@ export const RatingWrapper = styled.div`
   grid-gap: 5px;
   align-items: end;
   padding: 0;
+  color: ${({ color }) => color};
 `;
 
 export const RatingImage = styled.img`
   width: 24px;
   height: 22px;
-  padding: 3px;
 `;
 
 export const RatingAverage = styled.span`
