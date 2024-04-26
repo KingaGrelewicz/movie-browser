@@ -19,6 +19,8 @@ import {
 
 const Details = () => {
   const movieDetails = useSelector(selectMovieDetailsSlice);
+  const releaseYear = movieDetails.details.release_date;
+  const year = new Date(releaseYear).getFullYear();
 
   return (
     <DetailsWrapper>
@@ -28,9 +30,7 @@ const Details = () => {
       />
       <DetailsContent>
         <DetailsHeader>{movieDetails.details.title}</DetailsHeader>
-        <DetailsProductionYear>
-          {movieDetails.details.release_date}
-        </DetailsProductionYear>
+        <DetailsProductionYear>{year}</DetailsProductionYear>
         <DetailsProductionData>
           <DetailsProduction>
             Production:
