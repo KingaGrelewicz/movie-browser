@@ -24,9 +24,12 @@ export const DetailsContent = styled.div`
 export const DetailsHeader = styled.h2`
   font-size: 36px;
   font-weight: bold;
+  margin: 0;
 `;
 
-export const DetailsProductionYear = styled.span``;
+export const DetailsProductionYear = styled.span`
+  font-size: 22px;
+`;
 
 export const DetailsProductionData = styled.div`
   display: grid;
