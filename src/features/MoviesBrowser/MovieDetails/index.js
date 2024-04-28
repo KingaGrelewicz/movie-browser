@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import Details from "./Details";
 import BackdropView from "./BackdropView";
 
-const MovieDetails = ({ imageUrl }) => {
+const MovieDetails = () => {
   const dispatch = useDispatch();
   const movieDetails = useSelector(selectMovieDetailsSlice);
 
@@ -21,7 +21,7 @@ const MovieDetails = ({ imageUrl }) => {
       {movieDetails.status === "loading" && <p>Loading...</p>}
       {movieDetails.status === "success" && (
         <>
-          <BackdropView imageUrl={imageUrl} />
+          <BackdropView />
           <Details />
         </>
       )}
