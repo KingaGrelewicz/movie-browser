@@ -1,12 +1,11 @@
 import { Wrapper, Input } from "./styled";
 
-export default () => {
-
-	return (
-		<Wrapper>
-			<Input 
-                placeholder="Search for movies..."
-            />
-		</Wrapper>
-	);
+const Search = () => {
+  return (
+    <Wrapper>
+      <Input placeholder="Search for movies..." />
+    </Wrapper>
+  );
 };
+
+export default Search;
