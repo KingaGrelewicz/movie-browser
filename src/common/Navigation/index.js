@@ -1,6 +1,7 @@
 import Search from "./Search";
-import { Wrapper, List, Item, NavLink, PageTitle } from "./styled";
+import { Wrapper, List, Item, StyledNavLink, PageTitle } from "./styled";
 import { Icon } from "./Icon";
+import { toHomePage, toPeople } from "../../core/App/routes";
 
 const Navigation = () => {
   return (
@@ -12,10 +13,10 @@ const Navigation = () => {
             Movies Browser
           </PageTitle>
           <Item>
-            <NavLink>MOVIES</NavLink>
+            <StyledNavLink to={toHomePage()}>MOVIES</StyledNavLink>
           </Item>
           <Item>
-            <NavLink>PEOPLE</NavLink>
+            <StyledNavLink path={toPeople()}>PEOPLE</StyledNavLink>
           </Item>
         </Wrapper>
         <Search />
