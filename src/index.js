@@ -6,15 +6,21 @@ import reportWebVitals from "./reportWebVitals";
 import { Normalize } from "styled-normalize";
 import { Provider } from "react-redux";
 import store from "./core/App/store";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
+import { Globalstyle } from "./GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <Normalize />
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>
+	<Provider store={store}>
+		<ThemeProvider theme={theme}>
+			<Globalstyle />
+			<Normalize />
+			<React.StrictMode>
+				<App />
+			</React.StrictMode>
+		</ThemeProvider>
+	</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
