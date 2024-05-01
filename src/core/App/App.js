@@ -1,24 +1,18 @@
-import { Globalstyle } from "./GlobalStyle";
-import Container from "../../common/Container/styled";
 import { PopularMovies } from "../../features/MoviesBrowser/PopularMovies/Popular";
 import Navigation from "../../common/Navigation";
-import MovieDetails from "../../features/MoviesBrowser/MovieDetails";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { toHomePage, toPeople } from "./routes";
 
-function App() {
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <Globalstyle />
-        <Navigation />
-        <Container>
-          <PopularMovies />
-          <MovieDetails />
-        </Container>
-      </ThemeProvider>
-    </>
-  );
-}
+export const App = () => (
+  <BrowserRouter>
+    <Navigation />
 
-export default App;
+    <Switch>
+      <Route path={toHomePage()}>
+        <PopularMovies/>
+      </Route>
+      <Route path={toPeople()}>
+      </Route>
+    </Switch>
+  </BrowserRouter>
+);
