@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./core/App/App";
+import { App } from "./core/App/App";
 import reportWebVitals from "./reportWebVitals";
 import { Normalize } from "styled-normalize";
 import { Provider } from "react-redux";
 import store from "./core/App/store";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
-import { Globalstyle } from "./GlobalStyle";
+import { theme } from "./core/App/theme";
+import { Globalstyle } from "./core/App/GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
