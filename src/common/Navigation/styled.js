@@ -23,7 +23,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 		border-radius: 24px;
 	}
 
-	@media (max-width: 991px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.mobileMax}px) {
 		font-size: 12px;
 		font-weight: 600;
 	}
@@ -32,7 +32,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
 export const Item = styled.li`
 	margin: 0px 8px;
 
-	@media (max-width: 767px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.mobileMax}px) {
 		margin: auto;
 	}
 `;
@@ -47,7 +47,7 @@ export const List = styled.ul`
 	justify-content: space-around;
 	padding: 23px 0px;
 
-	@media (max-width: 991px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.tabletVerticalMax}px) {
 		display: grid;
 		grid-row-gap: 24px;
 	}
@@ -58,7 +58,7 @@ export const Wrapper = styled.span`
 	align-items: center;
 	justify-content: center;
 
-	@media (max-width: 767px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.mobileMax}px) {
 		justify-content: baseline;
 	}
 `;
@@ -72,11 +72,11 @@ export const PageTitle = styled.span`
 	display: flex;
 	align-items: center;
 
-	@media (max-width: 1199px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.tabletHorizontalMax}px) {
 		margin-right: 20px;
 	}
 
-	@media (max-width: 767px) {
+	@media (max-width: ${({ mediaQuery }) => mediaQuery.breakpoints.mobileMax}px) {
 		font-size: 13px;
 		font-weight: 500;
 		margin: auto;
