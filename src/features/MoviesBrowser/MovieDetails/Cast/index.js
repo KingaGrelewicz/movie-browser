@@ -16,7 +16,7 @@ const Cast = () => {
       <CastHeader>Cast</CastHeader>
       <CastTile>
         <CastPhoto />
-        <CastName></CastName>
+        <CastName>{movieCredits.cast.map((actor) => actor.name)}</CastName>
         <CastCharacter></CastCharacter>
       </CastTile>
     </>
