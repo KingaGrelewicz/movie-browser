@@ -16,7 +16,7 @@ const Navigation = () => {
             <StyledNavLink to={toHomePage()}>MOVIES</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink path={toPeople()}>PEOPLE</StyledNavLink>
+            <StyledNavLink to={toPeople()}>PEOPLE</StyledNavLink>
           </Item>
         </Wrapper>
         <Search />
