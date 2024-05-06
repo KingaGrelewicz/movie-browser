@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { mediaQuery } from "../../core/App/theme";
 import { NavLink } from "react-router-dom";
+import { mediaQuery } from "../../core/App/theme";
+
 
 const activeClassName = "link-active";
 
@@ -19,23 +20,24 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({
     border-radius: 24px;
   }
 
-  &:hover {
-    border: 1px solid ${({ theme }) => theme.color.white};
-    border-radius: 24px;
-  }
+	&:hover {
+		border: 1px solid ${({ theme }) => theme.color.white};
+		border-radius: 24px;
+		cursor: pointer;
+	}
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 12px;
-    font-weight: 600;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+		font-size: 12px;
+		font-weight: 600;
+	}
 `;
 
 export const Item = styled.li`
   margin: 0px 8px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    margin: auto;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+		margin: auto;
+	}
 `;
 
 export const List = styled.ul`
@@ -48,10 +50,10 @@ export const List = styled.ul`
   justify-content: space-around;
   padding: 23px 0px;
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    display: grid;
-    grid-row-gap: 24px;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+		display: grid;
+		grid-row-gap: 24px;
+	}
 `;
 
 export const Wrapper = styled.span`
@@ -59,9 +61,10 @@ export const Wrapper = styled.span`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    justify-content: baseline;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+		justify-content: baseline;
+	}
+
 `;
 
 export const PageTitle = styled.span`
@@ -73,13 +76,13 @@ export const PageTitle = styled.span`
   display: flex;
   align-items: center;
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    margin-right: 20px;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.tabletHorizonMax}px) {
+		margin-right: 20px;
+	}
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
-    font-weight: 500;
-    margin: auto;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+		font-size: 13px;
+		font-weight: 500;
+		margin: auto;
+	}
 `;

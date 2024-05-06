@@ -6,9 +6,9 @@ export const Wrapper = styled.div`
   max-width: 450px;
   flex-basis: 100%;
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    justify-content: center;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+		justify-content: center;
+	}
 `;
 
 export const Input = styled.input`
@@ -22,7 +22,7 @@ export const Input = styled.input`
   padding: 12px 24px;
   flex-basis: 100%;
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    margin: 0px 20px;
-  }
+	@media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+		margin: 0px 20px;
+	}
 `;

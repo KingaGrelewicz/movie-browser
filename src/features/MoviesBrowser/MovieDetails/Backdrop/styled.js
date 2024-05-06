@@ -4,6 +4,12 @@ export const BackdropHeader = styled.header`
   background: ${({ theme }) => theme.color.black};
 `;
 
+export const BacdropContainer = styled.div`
+  max-width: 1368px;
+  margin: 0 auto;
+  position: relative;
+`;
+
 export const BackdropImg = styled.img`
   position: relative;
   display: block;

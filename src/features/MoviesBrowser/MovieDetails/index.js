@@ -6,7 +6,8 @@ import {
 } from "./movieDetailsSlice";
 import { useEffect } from "react";
 import Details from "./Details";
-import BackdropView from "./BackdropView";
+import Backdrop from "./Backdrop";
+import Cast from "./Cast";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -21,8 +22,9 @@ const MovieDetails = () => {
       {movieDetails.status === "loading" && <p>Loading...</p>}
       {movieDetails.status === "success" && (
         <>
-          <BackdropView />
+          <Backdrop />
           <Details />
+          <Cast />
         </>
       )}
       {movieDetails.status === "error" && <p>Error fetching data</p>}
