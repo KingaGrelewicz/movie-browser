@@ -12,15 +12,15 @@ import { Globalstyle } from "./core/App/GlobalStyle";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<Provider store={store}>
-		<ThemeProvider theme={theme}>
-			<Globalstyle />
-			<Normalize />
-			<React.StrictMode>
-				<App />
-			</React.StrictMode>
-		</ThemeProvider>
-	</Provider>
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Globalstyle />
+      <Normalize />
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ThemeProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
