@@ -1,6 +1,6 @@
 import { Globalstyle } from "./GlobalStyle";
 import Container from "../../common/Container/styled";
-import { PopularMovies } from "../../features/MoviesBrowser/PopularMovies/Popular";
+import { PopularMovies } from "../../features/MoviesBrowser/PopularMovies";
 import Navigation from "../../common/Navigation";
 
 function App() {
