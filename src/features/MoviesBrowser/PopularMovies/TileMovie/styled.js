@@ -1,14 +1,7 @@
 import styled from "styled-components";
 import {ReactComponent as StarIcon} from "./Star.svg"
 
-export const Container = styled.section`
-width: 324px;
-height: 650px;
-border-radius: 5px;
-background-color: ${({theme})=>theme.color.white};
-box-shadow: 0px 4px 12px 0px #BAC7D580;
-display: grid;
-`
+
 export const Image = styled.img`
 width: 292px;
 height: 434px;
@@ -70,4 +63,13 @@ margin-right: 12px;
 
 export const StyleStarIcon = styled(StarIcon)`
 margin-right: 12px;
+`
+
+export const Container = styled.section`
+width: 324px;
+height: 650px;
+border-radius: 5px;
+background-color: ${({theme})=>theme.color.white};
+box-shadow: 0px 4px 12px 0px #BAC7D580;
+display: grid;
 `
