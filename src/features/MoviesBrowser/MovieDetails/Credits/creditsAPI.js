@@ -5,7 +5,7 @@ async function getCredits() {
   const response = await axios.get(
     `https://api.themoviedb.org/3/movie/693134/credits?api_key=${APIkey}`
   );
-  console.log(response.data);
+
   return response.data;
 }
 
