@@ -5,7 +5,7 @@ async function getMovieDetails() {
   const response = await axios.get(
     `https://api.themoviedb.org/3/movie/693134?api_key=${APIkey}`
   );
-  console.log(response);
+
   return response.data;
 }
 
