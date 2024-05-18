@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectMovieDetailsSlice } from "../movieDetailsSlice";
+import { selectMovieDetailsState } from "../movieDetailsSlice";
 import Rating from "../Rating";
 import {
   DetailsContent,
@@ -18,7 +18,7 @@ import {
 } from "./styled";
 
 const Details = () => {
-  const movieDetails = useSelector(selectMovieDetailsSlice);
+  const movieDetails = useSelector(selectMovieDetailsState);
   const releaseYear = movieDetails.details.release_date;
   const year = new Date(releaseYear).getFullYear();
 
@@ -32,29 +32,25 @@ const Details = () => {
         <DetailsHeader>{movieDetails.details.title}</DetailsHeader>
         <DetailsProductionYear>{year}</DetailsProductionYear>
         <DetailsProductionData>
-          <DetailsProduction>
-            Production:
-            <DetailsProductionContent>
-              {movieDetails.details.production_countries.map(
-                (country) => country.name
-              )}
-            </DetailsProductionContent>
-          </DetailsProduction>
-          <DetailsReleaseDate>
-            Release date:
-            <DetailsReleaseDateContent>
-              {movieDetails.details.release_date}
-            </DetailsReleaseDateContent>
-          </DetailsReleaseDate>
+          <DetailsProduction>Production:</DetailsProduction>
+          <DetailsProductionContent>
+            {movieDetails.details.production_countries.map(
+              (country) => country.name
+            )}
+          </DetailsProductionContent>
+          <DetailsReleaseDate>Release date:</DetailsReleaseDate>
+          <DetailsReleaseDateContent>
+            {movieDetails.details.release_date}
+          </DetailsReleaseDateContent>
         </DetailsProductionData>
         <DetailsGenres>
           {movieDetails.details.genres.map((genre) => (
             <DetailsGenereItem key={genre.id}>{genre.name}</DetailsGenereItem>
           ))}
         </DetailsGenres>
-        <Rating />
-        <DetailsOverview>{movieDetails.details.overview}</DetailsOverview>
+        <Rating variant="details" />
       </DetailsContent>
+      <DetailsOverview>{movieDetails.details.overview}</DetailsOverview>
     </DetailsWrapper>
   );
 };
