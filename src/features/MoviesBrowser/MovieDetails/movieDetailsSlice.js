@@ -28,6 +28,6 @@ export const {
   fetchMovieDetailsError,
 } = movieDetailsSlice.actions;
 
-export const selectMovieDetailsSlice = (state) => state.movieDetails;
+export const selectMovieDetailsState = (state) => state.movieDetails;
 
 export default movieDetailsSlice.reducer;

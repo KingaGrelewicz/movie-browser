@@ -1,15 +1,17 @@
-import { PopularMovies } from "../../features/MoviesBrowser/PopularMovies/Popular";
+import { PageStatus } from "../../features";
 import Navigation from "../../common/Navigation";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { toHomePage, toPeople } from "./routes";
+import { HashRouter, Switch, Route, } from "react-router-dom";
+import { toPeople } from "./routes";
 
 export const App = () => (
-	<BrowserRouter>
+	<HashRouter>
 		<Navigation />
-
-		<Routes>
-			<Route path={toHomePage()} element={<PopularMovies />} />
-			<Route path={toPeople()}></Route>
-		</Routes>
-	</BrowserRouter>
+		<Switch>
+			<Route path="/movies">
+				<PageStatus/>
+			</Route>
+			<Route path={toPeople()}>
+			</Route>
+		</Switch>
+	</HashRouter>
 );

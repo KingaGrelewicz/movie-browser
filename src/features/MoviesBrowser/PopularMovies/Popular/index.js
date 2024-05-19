@@ -1,21 +1,12 @@
-import { TileMovie } from "../../TileMovie";
-import { Container, Title, Tile } from "./styled";
+import { TileMovie } from "../TileMovie";
+import { Title, Movies } from "./styled";
 
-export const PopularMovies = () => (
-    <Container>
+export const Popular = ({ repositories }) => (
+    <>
         <Title>Popular movies</Title>
-        <Tile>
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-            <TileMovie />
-        </Tile>
-    </Container>
+        <Movies>
+            <TileMovie repositories={repositories} />
+        </Movies>
+    </>
 
 )
-
