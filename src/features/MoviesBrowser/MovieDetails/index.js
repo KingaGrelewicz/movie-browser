@@ -2,33 +2,47 @@ import { useDispatch, useSelector } from "react-redux";
 
 import {
   fetchMovieDetails,
-  selectMovieDetailsSlice,
+  selectMovieDetailsState,
 } from "./movieDetailsSlice";
 import { useEffect } from "react";
 import Details from "./Details";
 import Backdrop from "./Backdrop";
-import Cast from "./Cast";
+
+import {
+  fetchMovieCredits,
+  selectMovieCreditsState,
+} from "./Credits/creditsSlice";
+import Credits from "./Credits";
+import { MovieDetailsWrapper } from "./styled";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
-  const movieDetails = useSelector(selectMovieDetailsSlice);
+  const movieDetails = useSelector(selectMovieDetailsState);
+  const movieCredits = useSelector(selectMovieCreditsState);
+  const { cast, crew } = movieCredits.data || {};
 
   useEffect(() => {
     dispatch(fetchMovieDetails());
+    dispatch(fetchMovieCredits());
   }, [dispatch]);
 
   return (
-    <div>
-      {movieDetails.status === "loading" && <p>Loading...</p>}
-      {movieDetails.status === "success" && (
-        <>
+    <>
+      {movieDetails.status && movieCredits.status === "loading" && (
+        <p>Loading...</p>
+      )}
+      {movieDetails.status && movieCredits.status === "success" && (
+        <MovieDetailsWrapper>
           <Backdrop />
           <Details />
-          <Cast />
-        </>
+          <Credits credits={cast} type="Cast" />
+          <Credits credits={crew} type="Crew" />
+        </MovieDetailsWrapper>
       )}
-      {movieDetails.status === "error" && <p>Error fetching data</p>}
-    </div>
+      {movieDetails.status && movieCredits.status === "error" && (
+        <p>Error fetching data</p>
+      )}
+    </>
   );
 };
 
