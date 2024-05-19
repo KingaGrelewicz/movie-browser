@@ -29,5 +29,7 @@ export const {
 } = movieDetailsSlice.actions;
 
 export const selectMovieDetailsSlice = (state) => state.movieDetails;
+export const getMovieDetailsById = (state, movieId) =>
+  selectMovieDetailsSlice(state).find(({id}) => id === movieId);
 
 export default movieDetailsSlice.reducer;

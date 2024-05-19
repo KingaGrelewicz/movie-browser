@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DetailsWrapper = styled.div`
-  max-width: 1368px;
+  max-width: 1920px;
   margin: 64px auto;
   display: grid;
   grid-template-columns: 1fr auto;

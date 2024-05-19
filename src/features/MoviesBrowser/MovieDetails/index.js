@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   fetchMovieDetails,
   selectMovieDetailsSlice,
@@ -8,13 +7,20 @@ import { useEffect } from "react";
 import Details from "./Details";
 import Backdrop from "./Backdrop";
 import Cast from "./Cast";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
+
   const movieDetails = useSelector(selectMovieDetailsSlice);
 
+  const params = useParams();
+  const movieId = params.id
+console.log(movieDetails)
+
   useEffect(() => {
-    dispatch(fetchMovieDetails());
+    dispatch(fetchMovieDetails(movieId));
   }, [dispatch]);
 
   return (

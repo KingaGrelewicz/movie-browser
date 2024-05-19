@@ -8,12 +8,12 @@ import {
   NumberOfRating,
   AverageRating,
   StyleStarIcon,
+  Links,
 } from "./styled";
 import { GenresList } from "../../MoviesGenre/index.js";
 
 export const TileMovie = ({ repositories }) => {
   const movies = Object.values(repositories.results);
-  console.log(movies)
 
   return (
       <>
@@ -21,8 +21,8 @@ export const TileMovie = ({ repositories }) => {
 
               <Container key={id}>
                   <Image src={`https://image.tmdb.org/t/p/original/${poster_path}`} alt="" />
-                  <Description>
-                      <DescriptionTitle>{title}</DescriptionTitle>
+                      <Description>
+                      <DescriptionTitle><Links to={`/movies/${id}`}>{title}</Links></DescriptionTitle>
                       <Data>{release_date}</Data>
                       <GenresList genre_ids={genre_ids}/>
                       <Rating>

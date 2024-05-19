@@ -13,10 +13,10 @@ const Navigation = () => {
             Movies Browser
           </PageTitle>
           <Item>
-            <StyledNavLink to={toHomePage()}>MOVIES</StyledNavLink>
+            <StyledNavLink to="/movies">MOVIES</StyledNavLink>
           </Item>
           <Item>
-            <StyledNavLink to={toPeople()}>PEOPLE</StyledNavLink>
+            <StyledNavLink to="/people">PEOPLE</StyledNavLink>
           </Item>
         </Wrapper>
         <Search />
