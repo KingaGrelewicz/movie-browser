@@ -4,6 +4,7 @@ import { popularPeopleSaga } from "../../features/MoviesBrowser/PopularPeople/po
 import { movieCreditsSaga } from "../../features/MoviesBrowser/MovieDetails/Credits/creditsSaga";
 import { movieBrowserSaga } from "../../features/MoviesBrowser/movieBrowserSaga";
 import { movieGenreSaga } from "../../features/MoviesBrowser/MoviesGenre/movieGenreSaga";
+import { peopleDetailsSaga } from "../../features/MoviesBrowser/PeopleDetails/peopleDetailsSaga";
 
 export default function* rootSaga() {
   yield all([
@@ -12,6 +13,6 @@ export default function* rootSaga() {
     movieGenreSaga(),
     popularPeopleSaga(),
     movieCreditsSaga(),
+    peopleDetailsSaga(),
   ]);
-
 }
