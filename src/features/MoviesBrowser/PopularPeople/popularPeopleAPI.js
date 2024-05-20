@@ -5,7 +5,6 @@ async function getPopularPeople() {
   const response = await axios.get(
     `https://api.themoviedb.org/3/person/popular?api_key=${APIkey}`
   );
-  console.log(response);
   return response.data;
 }
 
