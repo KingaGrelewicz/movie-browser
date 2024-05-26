@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import {
   PopularPeopleDefaultPoster,
+  PopularPeopleHeader,
+  PopularPeopleHeaderWrapper,
   PopularPeopleName,
   PopularPeoplePhoto,
   PopularPeoplePosterIcon,
   PopularPeopleTile,
   PopularPeopleWrapper,
-  PopulerPeopleHeader,
-  PopulerPeopleHeaderWrapper,
 } from "./styled";
 import { selectPopularPeopleState } from "./popularPeopleSlice";
 
@@ -20,9 +20,9 @@ const PopularPeople = () => {
 
   return (
     <>
-      <PopulerPeopleHeaderWrapper>
-        <PopulerPeopleHeader>POPULAR PEOPLE</PopulerPeopleHeader>
-      </PopulerPeopleHeaderWrapper>
+      <PopularPeopleHeaderWrapper>
+        <PopularPeopleHeader>POPULAR PEOPLE</PopularPeopleHeader>
+      </PopularPeopleHeaderWrapper>
       <PopularPeopleWrapper>
         {peopleArray.map((people) => (
           <PopularPeopleTile key={people.id}>
