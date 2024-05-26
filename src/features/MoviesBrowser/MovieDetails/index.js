@@ -12,7 +12,9 @@ const MovieDetails = () => {
   const dispatch = useDispatch();
   const movieData = useSelector(selectMovieDetailsState);
   const movieCredits = useSelector(selectMovieCreditsState);
-  const { cast, crew } = movieCredits.data || {};
+  console.log(movieCredits.credits)
+  const { cast, crew } = movieCredits.credits || {};
+
   const movieDetails = movieData.details;
   const params = useParams();
   const movieIp = params.id
@@ -31,8 +33,8 @@ const MovieDetails = () => {
         <MovieDetailsWrapper>
           <Backdrop movieDetails={movieDetails}/>
           <Details movieDetails={movieDetails}/>
-          {/* <Credits credits={cast} type="Cast" />
-          <Credits credits={crew} type="Crew" /> */}
+          <Credits credits={cast} type="Cast" />
+          <Credits credits={crew} type="Crew" />
         </MovieDetailsWrapper>
       )}
       {movieData.status && movieCredits.status === "error" && (
