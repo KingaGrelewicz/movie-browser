@@ -28,6 +28,6 @@ export const {
   fetchMovieCreditsError,
 } = movieCreditsSlice.actions;
 
-export const selectMovieCreditsSlice = (state) => state.movieCredits;
+export const selectMovieCreditsState = (state) => state.movieCredits;
 
 export default movieCreditsSlice.reducer;

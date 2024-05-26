@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import {ReactComponent as StarIcon} from "./Star.svg"
+import {ReactComponent as StarIcon} from "./Star.svg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 export const Image = styled.img`
@@ -73,3 +74,8 @@ background-color: ${({theme})=>theme.color.white};
 box-shadow: 0px 4px 12px 0px #BAC7D580;
 display: grid;
 `
+
+export const Links = styled(Link)` 
+text-decoration: none;
+color: black;
+`;

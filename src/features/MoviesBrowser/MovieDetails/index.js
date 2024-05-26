@@ -1,45 +1,41 @@
 import { useDispatch, useSelector } from "react-redux";
-
-import {
-  fetchMovieDetails,
-  selectMovieDetailsState,
-} from "./movieDetailsSlice";
+import {fetchMovieDetails,selectMovieDetailsState,} from "./movieDetailsSlice";
 import { useEffect } from "react";
 import Details from "./Details";
 import Backdrop from "./Backdrop";
-
-import {
-  fetchMovieCredits,
-  selectMovieCreditsState,
-} from "./Credits/creditsSlice";
+import {fetchMovieCredits,selectMovieCreditsState,} from "./Credits/creditsSlice";
 import Credits from "./Credits";
 import { MovieDetailsWrapper } from "./styled";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
-  const movieDetails = useSelector(selectMovieDetailsState);
+  const movieData = useSelector(selectMovieDetailsState);
   const movieCredits = useSelector(selectMovieCreditsState);
   const { cast, crew } = movieCredits.data || {};
+  const movieDetails = movieData.details;
+  const params = useParams();
+  const movieIp = params.id
 
   useEffect(() => {
-    dispatch(fetchMovieDetails());
+    dispatch(fetchMovieDetails(movieIp));
     dispatch(fetchMovieCredits());
   }, [dispatch]);
 
   return (
     <>
-      {movieDetails.status && movieCredits.status === "loading" && (
+      {movieData.status && movieCredits.status === "loading" && (
         <p>Loading...</p>
       )}
-      {movieDetails.status && movieCredits.status === "success" && (
+      {movieData.status && movieCredits.status === "success" && (
         <MovieDetailsWrapper>
-          <Backdrop />
-          <Details />
-          <Credits credits={cast} type="Cast" />
-          <Credits credits={crew} type="Crew" />
+          <Backdrop movieDetails={movieDetails}/>
+          <Details movieDetails={movieDetails}/>
+          {/* <Credits credits={cast} type="Cast" />
+          <Credits credits={crew} type="Crew" /> */}
         </MovieDetailsWrapper>
       )}
-      {movieDetails.status && movieCredits.status === "error" && (
+      {movieData.status && movieCredits.status === "error" && (
         <p>Error fetching data</p>
       )}
     </>
