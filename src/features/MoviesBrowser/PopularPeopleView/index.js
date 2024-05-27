@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPeople, selectPopularPeopleData, selectPopularPeopleStatus } from "./PopularPeople/popularPeopleSlice";
+import {
+  fetchPeople,
+  selectPopularPeopleData,
+  selectPopularPeopleStatus,
+} from "./PopularPeople/popularPeopleSlice";
 import { PopularPeopleStatus } from "./PopularPeopleStatus";
 
-
-export const PopularPeopleView = () => {
+const PopularPeopleView = () => {
   const dispatch = useDispatch();
 
   const peopleStatus = useSelector(selectPopularPeopleStatus);
@@ -20,3 +23,5 @@ export const PopularPeopleView = () => {
     </div>
   );
 };
+
+export default PopularPeopleView;
