@@ -14,39 +14,50 @@ import {
 import { selectPeopleCreditsState } from "./peopleCreditsSlice";
 
 const PeopleCredits = ({ type }) => {
-  const { creditsData } = useSelector(selectPeopleCreditsState); 
-  console.log("PeopleCredits", creditsData);
+  const { creditsData } = useSelector(selectPeopleCreditsState);
 
-  const creditsArray = creditsData ? Object.values(creditsData) : [];
+  const renderCredits = (credits) => {
+    return credits.map((person) => (
+      <PeopleCreditsTile key={person.id || person.credit_id}>
+        {person.poster_path ? (
+          <PeopleCreditsPoster
+            src={`https://image.tmdb.org/t/p/w185/${person.poster_path}`}
+            alt="Person photo"
+          />
+        ) : (
+          <PeopleCreditsDefaultPoster>
+            <PeopleCreditsPosterIcon />
+          </PeopleCreditsDefaultPoster>
+        )}
+        <PeopleCreditsContent>
+          <PeopleCreditsMovieTitle>
+            {person.original_title}
+          </PeopleCreditsMovieTitle>
+          <PeopleCreditsData>
+            {person.character || person.job}
+          </PeopleCreditsData>
+          <PeopleCreditsProductionYear>
+            {person.release_date
+              ? new Date(person.release_date).getFullYear()
+              : ""}
+          </PeopleCreditsProductionYear>
+        </PeopleCreditsContent>
+      </PeopleCreditsTile>
+    ));
+  };
+
   return (
     <>
       {type && <PeopleCreditsHeader>{type}</PeopleCreditsHeader>}
       <PeopleCreditsWrapper>
-        {creditsArray.map((person) => (
-          <PeopleCreditsTile key={person.id || person.credit_id}>
-            {person.poster_path ? (
-              <PeopleCreditsPoster
-                src={`https://image.tmdb.org/t/p/w185/${person.poster_path}`}
-                alt="Person photo"
-              />
-            ) : (
-              <PeopleCreditsDefaultPoster>
-                <PeopleCreditsPosterIcon />
-              </PeopleCreditsDefaultPoster>
-            )}
-            <PeopleCreditsContent>
-              <PeopleCreditsMovieTitle>
-                {person.original_title}
-              </PeopleCreditsMovieTitle>
-              <PeopleCreditsData>
-                {person.character || person.job}
-              </PeopleCreditsData>
-              <PeopleCreditsProductionYear>
-                {new Date(person.release_date).getFullYear()}
-              </PeopleCreditsProductionYear>
-            </PeopleCreditsContent>
-          </PeopleCreditsTile>
-        ))}
+        {creditsData &&
+          creditsData.cast &&
+          type === "Cast" &&
+          renderCredits(creditsData.cast)}
+        {creditsData &&
+          creditsData.crew &&
+          type === "Crew" &&
+          renderCredits(creditsData.crew)}
       </PeopleCreditsWrapper>
     </>
   );
