@@ -14,7 +14,7 @@ const peopleCreditsSlice = createSlice({
       state.status = "success";
       state.creditsData = action.payload;
     },
-    fetchPeopleCreditsError: (state, action) => {
+    fetchPeopleCreditsError: (state) => {
       state.status = "error";
       state.creditsData = null;
     },
