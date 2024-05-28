@@ -11,14 +11,12 @@ import {
 import { PeopleViewWrapper } from "./styled";
 import PeopleCredits from "./PeopleCredits";
 import PeopleDetails from "./PeopleDetails";
+import { Loading } from "../../LoadingPage";
 
 const PeopleView = () => {
   const dispatch = useDispatch();
   const details = useSelector(selectPeopleDetailsState);
   const peopleCredits = useSelector(selectPeopleCreditsState);
-
-  console.log("PeopleView details:", details);
-  console.log("PeopleView peopleCredits:", peopleCredits);
 
   useEffect(() => {
     dispatch(fetchPeopleDetails());
@@ -27,9 +25,7 @@ const PeopleView = () => {
 
   return (
     <>
-      {details.status && peopleCredits.status === "loading" && (
-        <p>Loading...</p>
-      )}
+      {details.status && peopleCredits.status === "loading" && <Loading />}
       {details.status && peopleCredits.status === "success" && (
         <PeopleViewWrapper>
           <PeopleDetails />

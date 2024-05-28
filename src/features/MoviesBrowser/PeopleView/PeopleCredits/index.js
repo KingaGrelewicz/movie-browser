@@ -14,7 +14,7 @@ import {
 import { selectPeopleCreditsState } from "./peopleCreditsSlice";
 
 const PeopleCredits = ({ type }) => {
-  const { creditsData } = useSelector(selectPeopleCreditsState); // Destrukturyzacja `creditsData` z selektora
+  const { creditsData } = useSelector(selectPeopleCreditsState); 
   console.log("PeopleCredits", creditsData);
 
   const creditsArray = creditsData ? Object.values(creditsData) : [];
@@ -23,7 +23,7 @@ const PeopleCredits = ({ type }) => {
       {type && <PeopleCreditsHeader>{type}</PeopleCreditsHeader>}
       <PeopleCreditsWrapper>
         {creditsArray.map((person) => (
-          <PeopleCreditsTile key={person.id}>
+          <PeopleCreditsTile key={person.id || person.credit_id}>
             {person.poster_path ? (
               <PeopleCreditsPoster
                 src={`https://image.tmdb.org/t/p/w185/${person.poster_path}`}

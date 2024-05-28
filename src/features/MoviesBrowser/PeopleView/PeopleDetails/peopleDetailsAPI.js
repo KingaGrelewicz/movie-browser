@@ -13,6 +13,5 @@ const options = {
 
 export const getPeopleDetails = async () => {
   const response = await axios.request(options);
-  console.log("getPeopleDetails", response.data);
   return response.data;
 };

@@ -15,7 +15,6 @@ import {
 
 const PeopleDetails = () => {
   const { details } = useSelector(selectPeopleDetailsState);
-  console.log("PeopleDetails", details);
 
   return (
     <PeopleDetailsWrapper>
