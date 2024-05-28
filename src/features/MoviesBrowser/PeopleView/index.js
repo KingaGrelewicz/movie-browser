@@ -29,14 +29,8 @@ const PeopleView = () => {
       {details.status && peopleCredits.status === "success" && (
         <PeopleViewWrapper>
           <PeopleDetails />
-          <PeopleCredits
-            creditsData={peopleCredits.creditsData.cast}
-            type="Cast"
-          />
-          <PeopleCredits
-            creditsData={peopleCredits.creditsData.crew}
-            type="Crew"
-          />
+          <PeopleCredits type="Cast" />
+          <PeopleCredits type="Crew" />
         </PeopleViewWrapper>
       )}
       {details.status && peopleCredits.status === "error" && (
