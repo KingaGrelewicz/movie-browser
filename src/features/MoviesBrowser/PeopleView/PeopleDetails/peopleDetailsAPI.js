@@ -12,11 +12,6 @@ const options = {
 };
 
 export const getPeopleDetails = async () => {
-  try {
-    const response = await axios.request(options);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  const response = await axios.request(options);
+  return response.data;
 };

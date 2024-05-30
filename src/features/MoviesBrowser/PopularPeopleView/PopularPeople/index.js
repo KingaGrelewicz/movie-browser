@@ -1,24 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   PopularPeopleDefaultPoster,
+  PopularPeopleHeader,
+  PopularPeopleHeaderWrapper,
   PopularPeopleName,
   PopularPeoplePhoto,
   PopularPeoplePosterIcon,
   PopularPeopleTile,
   PopularPeopleWrapper,
-  PopulerPeopleHeader,
-  PopulerPeopleHeaderWrapper,
 } from "./styled";
-import { fetchPeople, selectPopularPeopleState } from "./popularPeopleSlice";
-import { useEffect } from "react";
+import { selectPopularPeopleState } from "./popularPeopleSlice";
 
 const PopularPeople = () => {
-  const dispatch = useDispatch();
   const popularPeople = useSelector(selectPopularPeopleState);
-
-  useEffect(() => {
-    dispatch(fetchPeople());
-  }, [dispatch]);
 
   const peopleArray = popularPeople.data
     ? Object.values(popularPeople.data.results)
@@ -26,9 +20,9 @@ const PopularPeople = () => {
 
   return (
     <>
-      <PopulerPeopleHeaderWrapper>
-        <PopulerPeopleHeader>POPULAR PEOPLE</PopulerPeopleHeader>
-      </PopulerPeopleHeaderWrapper>
+      <PopularPeopleHeaderWrapper>
+        <PopularPeopleHeader>POPULAR PEOPLE</PopularPeopleHeader>
+      </PopularPeopleHeaderWrapper>
       <PopularPeopleWrapper>
         {peopleArray.map((people) => (
           <PopularPeopleTile key={people.id}>
