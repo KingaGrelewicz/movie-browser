@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovieDetailsState } from "../movieDetailsSlice";
-import Rating from "../Rating";
+import Rating from "../../Rating";
 import {
   BackdropContainer,
   BackdropHeader,
