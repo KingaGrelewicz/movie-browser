@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as PosterIcon } from "../../../../images/Profile.svg";
+import { ReactComponent as PosterIcon } from "../../../../images/CameraIcon.svg";
 import { mediaQuery } from "../../../../core/App/theme";
 
 export const PeopleCreditsHeader = styled.h2`
@@ -22,6 +22,7 @@ export const PeopleCreditsWrapper = styled.div`
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
+  gap: 24px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     margin: 0 8px;
@@ -36,10 +37,9 @@ export const PeopleCreditsTile = styled.div`
   background: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.grey};
   display: flex;
-  flex: 0 0 200px;
-  margin: 10px;
+  flex: 0 0 324px;
   flex-flow: column;
-  align-items: center;
+  max-width: 324px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     flex: 0 0 120px;
@@ -48,25 +48,27 @@ export const PeopleCreditsTile = styled.div`
 
 export const PeopleCreditsPoster = styled.img`
   width: 100%;
-  padding: 12px;
+  padding: 16px;
   border-radius: 20px;
   display: block;
+  max-width: 324px;
+  align-self: center;
+  margin: 0;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding: 8px;
   }
 `;
 export const PeopleCreditsDefaultPoster = styled.div`
-  padding: 12px;
-  width: 176px;
-  height: 264px;
-  border-radius: 20px;
-  margin: 12px;
+  width: 292px;
+  height: 434px;
+  border-radius: 5px;
+  margin: 16px;
   background: ${({ theme }) => theme.color.silver};
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 176px;
-    height: 264px;
+    width: 292px;
+    height: 434px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
@@ -99,7 +101,8 @@ export const PeopleCreditsMovieTitle = styled.h3`
   font-size: 22px;
   font-weight: bold;
   margin: 0;
-  text-align: center;
+  word-break: break-word;
+  white-space: normal;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 14px;
@@ -133,4 +136,5 @@ export const PeopleCreditsProductionYear = styled.span`
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
-  }`;
+  }
+`;

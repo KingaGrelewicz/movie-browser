@@ -26,6 +26,7 @@ export const PeopleDetailsWrapper = styled.div`
 export const PeopleDetailsPhoto = styled.img`
   border-radius: 10px;
   grid-row: span 2;
+  max-width: 399px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     width: 154px;

@@ -19,7 +19,7 @@ const PeopleDetails = () => {
   return (
     <PeopleDetailsWrapper>
       <PeopleDetailsPhoto
-        src={`https://image.tmdb.org/t/p/w185/${details.profile_path}`}
+        src={`https://image.tmdb.org/t/p/original/${details.profile_path}`}
         alt={details.name}
       />
       <PeopleDetailsContent>
