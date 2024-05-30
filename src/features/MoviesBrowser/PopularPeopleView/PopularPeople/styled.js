@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { mediaQuery } from "../../../core/App/theme";
-import { ReactComponent as PosterIcon } from "../../../images/Profile.svg";
+import { mediaQuery } from "../../../../core/App/theme";
+import { ReactComponent as PosterIcon } from "../../../../images/Profile.svg";
 
-export const PopulerPeopleHeaderWrapper = styled.div`
+export const PopularPeopleHeaderWrapper = styled.div`
   max-width: 1368px;
   margin: 0 auto;
 `;
 
-export const PopulerPeopleHeader = styled.h1`
+export const PopularPeopleHeader = styled.h1`
   font-size: 36px;
   font-style: bold;
 
@@ -76,26 +76,32 @@ export const PopularPeoplePhoto = styled.img`
 `;
 
 export const PopularPeopleDefaultPoster = styled.div`
-  padding: 12px;
-  width: 176px;
-  height: 264px;
-  border-radius: 20px;
-  margin: 12px;
+  width: 168px;
+  height: 252px;
+  border-radius: 5px;
+  margin: 16px;
   background: ${({ theme }) => theme.color.silver};
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 176px;
-    height: 264px;
+    width: 150px;
+    height: 225px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    padding: 12px;
-    max-height: 278px;
+    width: 150px;
+    height: 225px;
+    padding: 0;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    width: 150px;
+    height: 225px;
     padding: 0;
   }
 `;
 
 export const PopularPeoplePosterIcon = styled(PosterIcon)`
+  width: 72px;
   stroke: ${({ theme }) => theme.color.white};
   fill: none;
   position: relative;

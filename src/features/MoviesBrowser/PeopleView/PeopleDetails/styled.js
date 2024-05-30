@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mediaQuery } from "../../../core/App/theme";
+import { mediaQuery } from "../../../../core/App/theme";
 
 export const PeopleDetailsWrapper = styled.div`
   max-width: 1368px;
@@ -26,6 +26,7 @@ export const PeopleDetailsWrapper = styled.div`
 export const PeopleDetailsPhoto = styled.img`
   border-radius: 10px;
   grid-row: span 2;
+  max-width: 399px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     width: 154px;
