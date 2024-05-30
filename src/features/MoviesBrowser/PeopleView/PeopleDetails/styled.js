@@ -16,23 +16,35 @@ export const PeopleDetailsWrapper = styled.div`
     max-width: 767px;
     margin: 16px;
     grid-gap: 16px;
+    padding: 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
+    padding: 24px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    margin: 24px;
+    padding: 24px;
   }
 `;
 
 export const PeopleDetailsPhoto = styled.img`
+  width: 20vw;
   border-radius: 10px;
   grid-row: span 2;
   max-width: 399px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 154px;
+    max-width: 154px;
   }
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    width: 185px;
+    max-width: 185px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 300px;
   }
 `;
 
