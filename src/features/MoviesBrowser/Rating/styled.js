@@ -34,7 +34,7 @@ export const RatingWrapper = styled.div`
       color: ${({ theme }) => theme.color.black};
       font-size: 22px;
       grid-gap: 12px;
-      padding: 24px;
+      padding: 16px;
     `}
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
