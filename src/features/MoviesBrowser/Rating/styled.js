@@ -5,8 +5,7 @@ import { ReactComponent as RatingStar } from "./image/star.svg";
 export const RatingWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto 1fr;
-  grid-gap: 8px;
-  align-items: end;
+  /* align-items: end; */
   padding: 0;
 
   ${({ $variant }) =>
@@ -14,6 +13,7 @@ export const RatingWrapper = styled.div`
     css`
       color: ${({ theme }) => theme.color.white};
       font-size: 30px;
+      grid-gap: 8px;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         align-items: center;
@@ -25,6 +25,16 @@ export const RatingWrapper = styled.div`
     css`
       color: ${({ theme }) => theme.color.black};
       font-size: 22px;
+      grid-gap: 8px;
+    `}
+
+    ${({ $variant }) =>
+    $variant === "peopleCredits" &&
+    css`
+      color: ${({ theme }) => theme.color.black};
+      font-size: 22px;
+      grid-gap: 12px;
+      padding: 24px;
     `}
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
@@ -32,6 +42,10 @@ export const RatingWrapper = styled.div`
   }
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     grid-gap: 6px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    grid-gap: 8px;
   }
 `;
 
@@ -68,6 +82,18 @@ export const RatingImage = styled(RatingStar)`
         height: 18px;
       }
     `}
+
+    ${({ $variant }) =>
+    $variant === "peopleCredits" &&
+    css`
+      width: 24px;
+      height: 24px;
+    `}
+
+    @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 export const RatingAverage = styled.span`
@@ -100,6 +126,13 @@ export const RatingAverage = styled.span`
         font-size: 16px;
       }
     `}
+
+    ${({ $variant }) =>
+    $variant === "peopleCredits" &&
+    css`
+      font-size: 16px;
+      font-weight: bold;
+    `}
 `;
 
 export const RatingPoints = styled.span`
@@ -129,6 +162,12 @@ export const RatingPoints = styled.span`
         font-size: 12px;
       }
     `}
+
+    ${({ $variant }) =>
+    $variant === "peopleCredits" &&
+    css`
+      display: none;
+    `}
 `;
 
 export const RatingVotesCount = styled.span`
@@ -157,5 +196,12 @@ export const RatingVotesCount = styled.span`
       @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
         font-size: 12px;
       }
+    `}
+
+    ${({ $variant }) =>
+    $variant === "peopleCredits" &&
+    css`
+      font-size: 16px;
+      color: ${({ theme }) => theme.color.darkerGrey};
     `}
 `;
