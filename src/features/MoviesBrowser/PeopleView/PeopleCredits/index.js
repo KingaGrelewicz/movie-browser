@@ -12,6 +12,7 @@ import {
   PeopleCreditsWrapper,
 } from "./styled";
 import { selectPeopleCreditsState } from "./peopleCreditsSlice";
+import Rating from "../../Rating";
 
 const PeopleCredits = ({ type }) => {
   const { creditsData } = useSelector(selectPeopleCreditsState);
@@ -38,10 +39,11 @@ const PeopleCredits = ({ type }) => {
           </PeopleCreditsData>
           <PeopleCreditsProductionYear>
             {person.release_date
-              ? new Date(person.release_date).getFullYear()
+              ? `(${new Date(person.release_date).getFullYear()})`
               : ""}
           </PeopleCreditsProductionYear>
         </PeopleCreditsContent>
+        <Rating variant="peopleCredits" ratingData={person} />
       </PeopleCreditsTile>
     ));
   };
