@@ -5,7 +5,6 @@ export const GenresList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0px;
-  margin-bottom: 39px;
 `;
 
 export const GenresItem = styled.li`
@@ -17,4 +16,5 @@ export const GenresItem = styled.li`
   text-align: center;
   margin-right: 8px;
   margin-bottom: 8px;
+  height: fit-content;
 `;
