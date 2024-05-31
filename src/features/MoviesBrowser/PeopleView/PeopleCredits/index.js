@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   PeopleCreditsContent,
   PeopleCreditsData,
@@ -13,9 +13,17 @@ import {
 } from "./styled";
 import { selectPeopleCreditsState } from "./peopleCreditsSlice";
 import Rating from "../../Rating";
+import Genres from "../../Genres";
+import { fetchGenres } from "../../Genres/genresSlice";
+import { useEffect } from "react";
 
 const PeopleCredits = ({ type }) => {
+  const dispatch = useDispatch();
   const { creditsData } = useSelector(selectPeopleCreditsState);
+
+  useEffect(() => {
+    dispatch(fetchGenres());
+  }, [dispatch]);
 
   const renderCredits = (credits) => {
     return credits.map((person) => (
@@ -42,8 +50,9 @@ const PeopleCredits = ({ type }) => {
               ? `(${new Date(person.release_date).getFullYear()})`
               : ""}
           </PeopleCreditsProductionYear>
+          <Genres genreIds={person.genre_ids} />
+          <Rating variant="peopleCredits" ratingData={person} />
         </PeopleCreditsContent>
-        <Rating variant="peopleCredits" ratingData={person} />
       </PeopleCreditsTile>
     ));
   };
