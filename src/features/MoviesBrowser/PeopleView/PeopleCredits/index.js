@@ -51,7 +51,7 @@ const PeopleCredits = ({ type }) => {
               : ""}
           </PeopleCreditsProductionYear>
           <Genres genreIds={person.genre_ids} />
-          <Rating variant="peopleCredits" ratingData={person} />
+          <Rating variant="movie" ratingData={person} />
         </PeopleCreditsContent>
       </PeopleCreditsTile>
     ));
@@ -59,7 +59,11 @@ const PeopleCredits = ({ type }) => {
 
   return (
     <>
-      {type && <PeopleCreditsHeader>{type}</PeopleCreditsHeader>}
+      {type && (
+        <PeopleCreditsHeader>
+          {type === "Cast" ? "Movie - Cast" : "Movie - Crew"}
+        </PeopleCreditsHeader>
+      )}
       <PeopleCreditsWrapper>
         {creditsData &&
           creditsData.cast &&
