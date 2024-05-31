@@ -7,15 +7,17 @@ const Genres = ({ genreIds }) => {
   const genresState = useSelector(selectGenresState);
   const { data: genres } = genresState;
 
-  const genreNames = genreIds.map((id) => {
-    const genre = genres.find((genre) => genre.id === id);
-    return genre ? genre.name : "";
-  });
+  const genreNames = genreIds
+    .map((id) => {
+      const genre = genres.find((genre) => genre.id === id);
+      return genre && genre.name ? { id: genre.id, name: genre.name } : null;
+    })
+    .filter((genre) => genre !== null);
 
   return (
     <GenresList>
-      {genreNames.map((name, index) => (
-        <GenresItem key={index}>{name}</GenresItem>
+      {genreNames.map((genre) => (
+        <GenresItem key={genre.id}>{genre.name}</GenresItem>
       ))}
     </GenresList>
   );
