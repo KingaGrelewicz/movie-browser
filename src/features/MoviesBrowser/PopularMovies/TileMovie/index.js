@@ -3,8 +3,8 @@ import {
   Image,
   Description,
   DescriptionTitle,
-  Data,
   Links,
+  Date,
 } from "./styled";
 import Genres from "../../Genres/index.js";
 import { useDispatch } from "react-redux";
@@ -43,7 +43,7 @@ export const TileMovie = ({ repositories }) => {
               <DescriptionTitle>
                 <Links to={`/movies/${id}`}>{title}</Links>
               </DescriptionTitle>
-              <Data>{release_date}</Data>
+              <Date>{release_date}</Date>
               <Genres genreIds={genre_ids} />
               <Rating
                 variant="movies"
