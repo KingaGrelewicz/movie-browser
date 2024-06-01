@@ -4,8 +4,8 @@ import { ReactComponent as RatingStar } from "./image/star.svg";
 
 export const RatingWrapper = styled.div`
   display: grid;
-  grid-template-columns: auto auto 1fr;
-  /* align-items: end; */
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto;
   padding: 0;
 
   ${({ $variant }) =>
@@ -13,7 +13,7 @@ export const RatingWrapper = styled.div`
     css`
       color: ${({ theme }) => theme.color.white};
       font-size: 30px;
-      grid-gap: 8px;
+      grid-gap: 16px 8px;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         align-items: center;
@@ -176,6 +176,10 @@ export const RatingVotesCount = styled.span`
     css`
       color: ${({ theme }) => theme.color.white};
       font-size: 16px;
+      display: grid;
+      grid-column-start: 1;
+      grid-column: span 2;
+      align-items: center;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         font-size: 12px;
@@ -188,6 +192,8 @@ export const RatingVotesCount = styled.span`
     $variant === "details" &&
     css`
       font-size: 14px;
+      grid-column-start: 1;
+      grid-column: span 2;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         font-size: 12px;
