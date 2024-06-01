@@ -15,6 +15,11 @@ export const PeopleCreditsHeader = styled.h2`
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 24px 16px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
+    margin: 24px;
+  }
 `;
 
 export const PeopleCreditsWrapper = styled.div`
@@ -31,6 +36,10 @@ export const PeopleCreditsWrapper = styled.div`
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
+  }
 `;
 
 export const PeopleCreditsTile = styled.div`
@@ -42,7 +51,14 @@ export const PeopleCreditsTile = styled.div`
   max-width: 324px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    flex: 0 0 120px;
+    max-width: 154px;
+  }
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    max-width: 185px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
   }
 `;
 
@@ -52,15 +68,21 @@ export const PeopleCreditsPoster = styled.img`
   border-radius: 20px;
   display: block;
   max-width: 324px;
+  height: 466px;
   align-self: center;
   margin: 0;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding: 8px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
+    height: 374px;
+  }
 `;
 export const PeopleCreditsDefaultPoster = styled.div`
-  width: 292px;
+  max-width: 292px;
   height: 434px;
   border-radius: 5px;
   margin: 16px;
@@ -76,6 +98,11 @@ export const PeopleCreditsDefaultPoster = styled.div`
     max-height: 278px;
     padding: 0;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
+    height: 342px;
+  }
 `;
 
 export const PeopleCreditsPosterIcon = styled(PosterIcon)`
@@ -85,6 +112,7 @@ export const PeopleCreditsPosterIcon = styled(PosterIcon)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 112px;
 `;
 
 export const PeopleCreditsContent = styled.div`
@@ -111,6 +139,10 @@ export const PeopleCreditsMovieTitle = styled.h3`
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 16px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 20px;
+  }
 `;
 
 export const PeopleCreditsData = styled.span`
@@ -124,6 +156,10 @@ export const PeopleCreditsData = styled.span`
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
+  }
 `;
 
 export const PeopleCreditsProductionYear = styled.span`
@@ -136,5 +172,9 @@ export const PeopleCreditsProductionYear = styled.span`
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
   }
 `;

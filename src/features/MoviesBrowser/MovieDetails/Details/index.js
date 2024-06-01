@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectMovieDetailsState } from "../movieDetailsSlice";
-import { Rating } from "../../PopularMovies/TileMovie/styled";
+import Rating from "../../Rating";
 import {
   DetailsContent,
   DetailsGenereItem,

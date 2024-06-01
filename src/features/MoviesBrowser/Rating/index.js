@@ -1,4 +1,3 @@
-// import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 import {
   RatingAverage,
@@ -7,7 +6,6 @@ import {
   RatingImage,
   RatingPoints,
 } from "./styled";
-// import { selectMovieDetailsState } from "../MovieDetails/movieDetailsSlice";
 
 const Rating = ({ variant, ratingData }) => {
   return (
