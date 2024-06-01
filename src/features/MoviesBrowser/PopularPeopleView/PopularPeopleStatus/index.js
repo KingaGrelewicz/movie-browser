@@ -1,3 +1,4 @@
+import Error from "../../../ErrorPage";
 import { Loading } from "../../../LoadingPage";
 import PopularPeople from "../PopularPeople";
 
@@ -10,7 +11,7 @@ export const PopularPeopleStatus = ({ status, data }) => {
       return <Loading />;
 
     case "error":
-      return <Loading />;
+      return <Error />;
 
     case "success":
       return <PopularPeople data={data} />;
