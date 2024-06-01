@@ -26,6 +26,7 @@ const PeopleCredits = ({ type }) => {
   }, [dispatch]);
 
   const renderCredits = (credits) => {
+   
     return credits.map((person) => (
       <PeopleCreditsTile key={person.id || person.credit_id}>
         {person.poster_path ? (

@@ -1,14 +1,14 @@
 import {
-    Container,
-    Image,
-    Description,
-    DescriptionTitle,
-    Data,
-    Rating,
-    NumberOfRating,
-    AverageRating,
-    StyleStarIcon,
-    Links
+  Container,
+  Image,
+  Description,
+  DescriptionTitle,
+  Data,
+  Rating,
+  NumberOfRating,
+  AverageRating,
+  StyleStarIcon,
+  Links
 } from "./styled";
 import Genres from "../../Genres/index.js";
 import { useDispatch } from "react-redux";
@@ -16,14 +16,14 @@ import { useEffect } from "react";
 import { fetchGenres } from "../../Genres/genresSlice.js";
 
 export const TileMovie = ({ repositories }) => {
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
+ 
+  const movies = Object.values(repositories.results);
+  
   useEffect(() => {
     dispatch(fetchGenres());
   }, [dispatch]);
-
-  const movies = Object.values(repositories.results);
-  console.log(movies);
 
   return (
     <>
@@ -43,7 +43,7 @@ export const TileMovie = ({ repositories }) => {
               alt=""
             />
             <Description>
-              <DescriptionTitle>{title}</DescriptionTitle>
+              <DescriptionTitle><Links to={`/movies/${id}`}>{title}</Links></DescriptionTitle>
               <Data>{release_date}</Data>
               <Genres genreIds={genre_ids} />
               <Rating>

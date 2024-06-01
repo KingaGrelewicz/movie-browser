@@ -31,6 +31,7 @@ fetchRepositoriesError,
 const selectMovieBrowserState = state => state.movieBrowser;
 
 export const selectRepositories = state => selectMovieBrowserState(state).repositories;
+export const selectPages = state => selectMovieBrowserState(state).repositories.page;
 export const selectRepositoriesStatus = state => selectMovieBrowserState(state).status;
 
 export default movieBrowserSlice.reducer;

@@ -8,15 +8,16 @@ import {
 } from "./styled";
 
 const Rating = ({ variant, ratingData }) => {
+  console.log(ratingData)
   return (
     <RatingWrapper $variant={variant}>
       <RatingImage alt="Rating Image" $variant={variant} />
       <RatingAverage $variant={variant}>
-        {ratingData.vote_average.toFixed(1)}{" "}
+        {/* {ratingData.vote_average.toFixed(1)}{" "} */}
         <RatingPoints $variant={variant}>/10</RatingPoints>
       </RatingAverage>
       <RatingVotesCount $variant={variant}>
-        {ratingData.vote_count} votes
+        {/* {ratingData.vote_count} votes */}
       </RatingVotesCount>
     </RatingWrapper>
   );
