@@ -9,16 +9,16 @@ import {
   BackdropWrapper,
 } from "./styled";
 
-const Backdrop = () => {
-  const movieDetails = useSelector(selectMovieDetailsState);
-  const backdropUrl = `https://image.tmdb.org/t/p/w1280/${movieDetails.details.backdrop_path}`;
+const Backdrop = ({movieDetails}) => {
+ 
+  const backdropUrl = `https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`;
 
   return (
     <BackdropHeader>
       <BackdropContainer>
         <BackdropImg src={backdropUrl} alt="Backdrop Poster" />
         <BackdropWrapper>
-          <BackdropTitle>{movieDetails.details.title}</BackdropTitle>
+          <BackdropTitle>{movieDetails.title}</BackdropTitle>
           <Rating variant="backdrop" />
         </BackdropWrapper>
       </BackdropContainer>

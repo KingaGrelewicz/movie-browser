@@ -1,13 +1,14 @@
 import {
-  Container,
-  Image,
-  Description,
-  DescriptionTitle,
-  Data,
-  Rating,
-  NumberOfRating,
-  AverageRating,
-  StyleStarIcon,
+    Container,
+    Image,
+    Description,
+    DescriptionTitle,
+    Data,
+    Rating,
+    NumberOfRating,
+    AverageRating,
+    StyleStarIcon,
+    Links
 } from "./styled";
 import Genres from "../../Genres/index.js";
 import { useDispatch } from "react-redux";
