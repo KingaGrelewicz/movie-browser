@@ -5,15 +5,15 @@ import { ReactComponent as RatingStar } from "./image/star.svg";
 export const RatingWrapper = styled.div`
   display: grid;
   grid-template-columns: auto auto 1fr;
-  /* align-items: end; */
   padding: 0;
 
   ${({ $variant }) =>
     $variant === "backdrop" &&
     css`
       color: ${({ theme }) => theme.color.white};
+      grid-template-rows: auto;
       font-size: 30px;
-      grid-gap: 8px;
+      grid-gap: 16px 8px;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         align-items: center;
@@ -29,7 +29,7 @@ export const RatingWrapper = styled.div`
     `}
 
     ${({ $variant }) =>
-    $variant === "peopleCredits" &&
+    $variant === "movies" &&
     css`
       color: ${({ theme }) => theme.color.black};
       font-size: 22px;
@@ -84,7 +84,7 @@ export const RatingImage = styled(RatingStar)`
     `}
 
     ${({ $variant }) =>
-    $variant === "peopleCredits" &&
+    $variant === "movies" &&
     css`
       width: 24px;
       height: 24px;
@@ -128,7 +128,7 @@ export const RatingAverage = styled.span`
     `}
 
     ${({ $variant }) =>
-    $variant === "peopleCredits" &&
+    $variant === "movies" &&
     css`
       font-size: 16px;
       font-weight: bold;
@@ -164,7 +164,7 @@ export const RatingPoints = styled.span`
     `}
 
     ${({ $variant }) =>
-    $variant === "peopleCredits" &&
+    $variant === "movies" &&
     css`
       display: none;
     `}
@@ -176,6 +176,10 @@ export const RatingVotesCount = styled.span`
     css`
       color: ${({ theme }) => theme.color.white};
       font-size: 16px;
+      display: grid;
+      grid-column-start: 1;
+      grid-column: span 2;
+      align-items: center;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         font-size: 12px;
@@ -188,6 +192,7 @@ export const RatingVotesCount = styled.span`
     $variant === "details" &&
     css`
       font-size: 14px;
+      align-self: center;
 
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         font-size: 12px;
@@ -199,7 +204,7 @@ export const RatingVotesCount = styled.span`
     `}
 
     ${({ $variant }) =>
-    $variant === "peopleCredits" &&
+    $variant === "movies" &&
     css`
       font-size: 16px;
       color: ${({ theme }) => theme.color.darkerGrey};

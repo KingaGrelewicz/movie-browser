@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectMovieDetailsState } from "../movieDetailsSlice";
 import Rating from "../../Rating";
 import {
   BackdropContainer,
@@ -9,8 +7,7 @@ import {
   BackdropWrapper,
 } from "./styled";
 
-const Backdrop = ({movieDetails}) => {
- 
+const Backdrop = ({ movieDetails }) => {
   const backdropUrl = `https://image.tmdb.org/t/p/w1280/${movieDetails.backdrop_path}`;
 
   return (
@@ -19,7 +16,7 @@ const Backdrop = ({movieDetails}) => {
         <BackdropImg src={backdropUrl} alt="Backdrop Poster" />
         <BackdropWrapper>
           <BackdropTitle>{movieDetails.title}</BackdropTitle>
-          <Rating variant="backdrop" />
+          <Rating variant="backdrop" ratingData={movieDetails} />
         </BackdropWrapper>
       </BackdropContainer>
     </BackdropHeader>

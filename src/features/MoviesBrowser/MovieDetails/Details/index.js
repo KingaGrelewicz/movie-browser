@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectMovieDetailsState } from "../movieDetailsSlice";
 import Rating from "../../Rating";
 import {
   DetailsContent,
@@ -17,8 +15,7 @@ import {
   DetailsWrapper,
 } from "./styled";
 
-const Details = ({movieDetails}) => {
- 
+const Details = ({ movieDetails }) => {
   const releaseYear = movieDetails.release_date;
   const year = new Date(releaseYear).getFullYear();
 
@@ -34,9 +31,9 @@ const Details = ({movieDetails}) => {
         <DetailsProductionData>
           <DetailsProduction>Production:</DetailsProduction>
           <DetailsProductionContent>
-            {movieDetails.production_countries.map(
-              (country) => country.name
-            )}
+            {movieDetails.production_countries
+              .map((country) => country.name)
+              .join(", ")}
           </DetailsProductionContent>
           <DetailsReleaseDate>Release date:</DetailsReleaseDate>
           <DetailsReleaseDateContent>
@@ -44,11 +41,17 @@ const Details = ({movieDetails}) => {
           </DetailsReleaseDateContent>
         </DetailsProductionData>
         <DetailsGenres>
-          {movieDetails.genres.map(({id, name}) => (
+          {movieDetails.genres.map(({ id, name }) => (
             <DetailsGenereItem key={id}>{name}</DetailsGenereItem>
           ))}
         </DetailsGenres>
-        <Rating variant="details" />
+        <Rating
+          variant="details"
+          ratingData={{
+            vote_average: movieDetails.vote_average,
+            vote_count: movieDetails.vote_count,
+          }}
+        />
       </DetailsContent>
       <DetailsOverview>{movieDetails.overview}</DetailsOverview>
     </DetailsWrapper>
