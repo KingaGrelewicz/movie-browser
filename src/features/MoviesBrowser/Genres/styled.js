@@ -17,4 +17,5 @@ export const GenresItem = styled.li`
   margin-right: 8px;
   margin-bottom: 8px;
   height: fit-content;
+  width: fit-content;
 `;
