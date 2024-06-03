@@ -2,22 +2,30 @@ import styled from "styled-components";
 import { ReactComponent as PosterIcon } from "../../../../images/Profile.svg";
 import { mediaQuery } from "../../../../core/App/theme";
 
+export const CreditsContainer = styled.div`
+  max-width: 1368px;
+  margin: 0 auto;
+`;
+
 export const CreditsHeader = styled.h2`
   font-size: 36px;
   margin-top: 64px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 20px;
-    margin-left: 16px;
-    margin-top: 24px;
+    margin: 24px auto 12px 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 24px 16px;
   }
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    margin: 24px;
+  }
 `;
 
 export const CreditsWrapper = styled.div`
+  max-width: 1368px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -29,6 +37,10 @@ export const CreditsWrapper = styled.div`
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
   }
 `;
 
@@ -43,6 +55,9 @@ export const CreditsTile = styled.div`
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     flex: 0 0 120px;
+  }
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    flex: 0 0 152px;
   }
 `;
 
@@ -60,19 +75,20 @@ export const CreditsDefaultPoster = styled.div`
   padding: 12px;
   width: 176px;
   height: 264px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 12px;
   background: ${({ theme }) => theme.color.silver};
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 176px;
-    height: 264px;
+    width: 136px;
+    height: 203px;
+    margin: 8px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     padding: 12px;
-    max-height: 278px;
-    padding: 0;
+    max-width: 128px;
+    max-height: 192px;
   }
 `;
 
@@ -92,6 +108,9 @@ export const CreditsContent = styled.div`
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding: 8px;
+  }
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    padding: 12px;
   }
 `;
 
