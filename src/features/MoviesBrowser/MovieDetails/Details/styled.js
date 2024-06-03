@@ -21,17 +21,28 @@ export const DetailsWrapper = styled.div`
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    margin: 24px;
+  }
 `;
 
 export const DetailsPoster = styled.img`
   border-radius: 10px;
   grid-row: span 2;
+  width: 20vw;
+  max-width: 399px;
+  min-width: 114px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 154px;
+    max-width: 154px;
   }
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    width: 185px;
+    max-width: 185px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 300px;
   }
 `;
 
@@ -41,11 +52,15 @@ export const DetailsContent = styled.div`
   gap: 24px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    gap: 12px;
+    gap: 8px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     gap: 16px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    gap: 20px;
   }
 `;
 
@@ -60,6 +75,10 @@ export const DetailsHeader = styled.h2`
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 26px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 32px;
   }
 `;
 
@@ -172,14 +191,12 @@ export const DetailsOverview = styled.span`
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 14px;
     display: grid;
-    grid-column-start: 1;
     grid-column: span 2;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 16px;
     display: grid;
-    grid-column-start: 1;
     grid-column: span 2;
   }
 `;
