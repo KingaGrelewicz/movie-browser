@@ -11,7 +11,6 @@ import {
   selectMovieCreditsState,
 } from "./Credits/creditsSlice";
 import Credits from "./Credits";
-import { MovieDetailsWrapper } from "./styled";
 import { useParams } from "react-router-dom";
 import { Loading } from "../../LoadingPage";
 import Error from "../../ErrorPage";
@@ -36,12 +35,12 @@ const MovieDetails = () => {
     <>
       {movieData.status && movieCredits.status === "loading" && <Loading />}
       {movieData.status && movieCredits.status === "success" && (
-        <MovieDetailsWrapper>
+        <>
           <Backdrop movieDetails={movieDetails} />
           <Details movieDetails={movieDetails} />
           <Credits credits={cast} type="Cast" />
           <Credits credits={crew} type="Crew" />
-        </MovieDetailsWrapper>
+        </>
       )}
       {movieData.status && movieCredits.status === "error" && <Error />}
     </>
