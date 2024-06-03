@@ -1,6 +1,5 @@
 import Search from "./Search";
-import { Wrapper, List, Item, StyledNavLink, PageTitle } from "./styled";
-import { Icon } from "./Icon";
+import { Wrapper, List, Item, StyledNavLink, PageTitle, Icon } from "./styled";
 import { toHomePage, toPeople } from "../../core/App/routes";
 
 const Navigation = () => {
