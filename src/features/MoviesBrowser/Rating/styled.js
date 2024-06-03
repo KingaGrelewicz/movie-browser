@@ -18,6 +18,11 @@ export const RatingWrapper = styled.div`
       @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
         align-items: center;
       }
+
+      @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+        align-items: center;
+        margin-left: 24px;
+      }
     `}
 
   ${({ $variant }) =>
@@ -64,6 +69,10 @@ export const RatingImage = styled(RatingStar)`
       @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
         width: 18px;
         height: 18px;
+      }
+      @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+        width: 24px;
+        height: 24px;
       }
     `}
   ${({ $variant }) =>
