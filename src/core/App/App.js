@@ -5,10 +5,12 @@ import { toPeople } from "./routes";
 import MovieDetails from "../../features/MoviesBrowser/MovieDetails";
 import PopularPeopleView from "../../features/MoviesBrowser/PopularPeopleView";
 
+
 export const App = () => (
   <HashRouter>
     <Navigation />
     <Switch>
+
       <Route path="/movies/:id">
         <MovieDetails />
       </Route>

@@ -21,7 +21,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     dispatch(fetchMovieDetails(movieIp));
-    dispatch(fetchMovieCredits());
+    dispatch(fetchMovieCredits(movieIp));
   }, [dispatch]);
 
   return (
