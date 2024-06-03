@@ -1,15 +1,14 @@
 import { TileMovie } from "../TileMovie";
 import { Title, Movies } from "./styled";
 
-export const Popular = ({ repositories, inputValue}) => {
+export const Popular = ({ repositories, query}) => {
 	const films = Object.values(repositories.results);
 	console.log(films);
 
 	const filteredMovies = films.filter(movie =>
-        movie.title.includes(inputValue)
+        movie.title.includes(query)
     );
         
-
 	return (
 			<>
 				<Title>Popular movies</Title>
