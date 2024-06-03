@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectPeopleDetailsState } from "./peopleDetailsSlice";
+import { selectPeopleDetailsState, fetchPeopleDetails, selectPeopleState } from "./peopleDetailsSlice";
 import {
   PeopleDetailsBiography,
   PeopleDetailsBirthDate,
@@ -13,9 +13,23 @@ import {
   PeopleDetailsWrapper,
 } from "./styled";
 
-const PeopleDetails = () => {
-  const { details } = useSelector(selectPeopleDetailsState);
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
+const PeopleDetails = () => {
+  const detailsPeople = useSelector(selectPeopleState);
+
+  const dispatch = useDispatch();
+  const params = useParams();
+  const peopleIp = params.id;
+const details = detailsPeople.details;
+
+  useEffect(() => {
+    dispatch(fetchPeopleDetails(peopleIp));
+  }, [peopleIp]);
+
+  
   return (
     <PeopleDetailsWrapper>
       <PeopleDetailsPhoto

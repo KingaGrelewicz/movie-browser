@@ -9,6 +9,7 @@ import {
   PopularPeopleTile,
   PopularPeopleWrapper,
 } from "./styled";
+import { Links } from "../../PopularMovies/TileMovie/styled";
 import { selectPopularPeopleState } from "./popularPeopleSlice";
 
 const PopularPeople = () => {
@@ -36,7 +37,8 @@ const PopularPeople = () => {
                 <PopularPeoplePosterIcon />
               </PopularPeopleDefaultPoster>
             )}
-            <PopularPeopleName>{people.name}</PopularPeopleName>
+            <Links to={`/people/${people.id}`}><PopularPeopleName>{people.name}</PopularPeopleName></Links>
+            
           </PopularPeopleTile>
         ))}
       </PopularPeopleWrapper>

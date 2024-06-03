@@ -4,13 +4,16 @@ import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { toPeople } from "./routes";
 import MovieDetails from "../../features/MoviesBrowser/MovieDetails";
 import PopularPeopleView from "../../features/MoviesBrowser/PopularPeopleView";
+import PeopleDetails from "../../features/MoviesBrowser/PeopleView/PeopleDetails";
 
 
 export const App = () => (
   <HashRouter>
     <Navigation />
     <Switch>
-
+    <Route path="/people/:id">
+        <PeopleDetails />
+      </Route>
       <Route path="/movies/:id">
         <MovieDetails />
       </Route>
