@@ -1,8 +1,9 @@
-import { Wrapper, Input } from "./styled";
+import { Wrapper, Input, SearchPic } from "./styled";
 
 const Search = () => {
   return (
     <Wrapper>
+      <SearchPic />
       <Input placeholder="Search for movies..." />
     </Wrapper>
   );
