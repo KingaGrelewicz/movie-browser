@@ -19,7 +19,7 @@ const PopularPeopleView = () => {
 
   return (
     <div>
-      <PopularPeopleStatus status={peopleStatus} repositories={peopleData} />
+      <PopularPeopleStatus status={peopleStatus} data={peopleData} />
     </div>
   );
 };
