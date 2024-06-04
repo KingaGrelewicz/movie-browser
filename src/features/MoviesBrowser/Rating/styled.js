@@ -3,31 +3,35 @@ import { mediaQuery } from "../../../core/App/theme";
 import { ReactComponent as RatingStar } from "./image/star.svg";
 
 export const RatingWrapper = styled.div`
-	display: grid;
-	grid-template-columns: auto auto 1fr;
-	padding: 0;
-	align-items: end;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  padding: 0;
 
-	${({ $variant }) =>
-		$variant === "backdrop" &&
-		css`
-			color: ${({ theme }) => theme.color.white};
-			grid-template-rows: auto;
-			font-size: 30px;
-			grid-gap: 16px 8px;
+  ${({ $variant }) =>
+    $variant === "backdrop" &&
+    css`
+      color: ${({ theme }) => theme.color.white};
+      grid-template-rows: auto;
+      font-size: 30px;
+      grid-gap: 16px 8px;
 
-			@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-				align-items: center;
-			}
-		`}
+      @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+        align-items: center;
+      }
 
-	${({ $variant }) =>
-		$variant === "details" &&
-		css`
-			color: ${({ theme }) => theme.color.black};
-			font-size: 22px;
-			grid-gap: 8px;
-		`}
+      @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+        align-items: center;
+        margin-left: 24px;
+      }
+    `}
+
+  ${({ $variant }) =>
+    $variant === "details" &&
+    css`
+      color: ${({ theme }) => theme.color.black};
+      font-size: 22px;
+      grid-gap: 8px;
+    `}
 
     ${({ $variant }) =>
 		$variant === "movies" &&
@@ -51,39 +55,43 @@ export const RatingWrapper = styled.div`
 `;
 
 export const RatingImage = styled(RatingStar)`
-	${({ $variant }) =>
-		$variant === "backdrop" &&
-		css`
-			width: 40px;
-			height: 38px;
+  ${({ $variant }) =>
+    $variant === "backdrop" &&
+    css`
+      width: 40px;
+      height: 38px;
 
-			@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-				width: 16px;
-				height: 16px;
-			}
+      @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+        width: 16px;
+        height: 16px;
+      }
 
-			@media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-				width: 18px;
-				height: 18px;
-			}
-		`}
-	${({ $variant }) =>
-		$variant === "details" &&
-		css`
-			width: 24px;
-			height: 22px;
+      @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+        width: 18px;
+        height: 18px;
+      }
+      @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+        width: 24px;
+        height: 24px;
+      }
+    `}
+  ${({ $variant }) =>
+    $variant === "details" &&
+    css`
+      width: 24px;
+      height: 22px;
 
-			@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-				width: 16px;
-				height: 16px;
-			}
+      @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+        width: 16px;
+        height: 16px;
+      }
 
-			@media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-				width: 18px;
-				height: 18px;
-			}
-		`}
-
+      @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+        width: 18px;
+        height: 18px;
+      }
+    `}
+    
     ${({ $variant }) =>
 		$variant === "movies" &&
 		css`

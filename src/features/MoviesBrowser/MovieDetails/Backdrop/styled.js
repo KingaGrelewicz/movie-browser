@@ -10,28 +10,36 @@ export const BackdropContainer = styled.div`
   margin: 0 auto;
   position: relative;
   overflow: hidden;
+`;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-  }
-
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+export const BackdropVignette = styled.div`
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 100px 10px 100px ${({ theme }) => theme.color.black},
+      inset -100px 10px 100px ${({ theme }) => theme.color.black},
+      inset 100px -10px 100px ${({ theme }) => theme.color.black},
+      inset -100px -10px 100px ${({ theme }) => theme.color.black};
   }
 `;
 
 export const BackdropImg = styled.img`
   display: block;
   margin: 0 auto;
-  width: calc(100% + 20px);
-  border-radius: 10px;
-  box-shadow: 200px 10px 100px rgba(0, 0, 0, 0.8),
-    -200px 10px 100px rgba(0, 0, 0, 0.8), 200px -10px 100px rgba(0, 0, 0, 0.8),
-    -200px -10px 100px rgba(0, 0, 0, 0.8);
+  max-width: 1280px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 300px;
+    max-width: 767px;
   }
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    max-width: 780px;
+    max-width: 991px;
+  }
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
   }
 `;
 
@@ -66,5 +74,10 @@ export const BackdropTitle = styled.h2`
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 48px;
+    margin: 16px;
+  }
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 56px;
+    margin-left: 24px;
   }
 `;
