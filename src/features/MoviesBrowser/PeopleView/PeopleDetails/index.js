@@ -19,11 +19,11 @@ import { useDispatch } from "react-redux";
 
 const PeopleDetails = () => {
   const detailsPeople = useSelector(selectPeopleState);
-
+  const details = detailsPeople.details
   const dispatch = useDispatch();
   const params = useParams();
   const peopleIp = params.id;
-const details = detailsPeople.details;
+
 
   useEffect(() => {
     dispatch(fetchPeopleDetails(peopleIp));
@@ -33,23 +33,23 @@ const details = detailsPeople.details;
   return (
     <PeopleDetailsWrapper>
       <PeopleDetailsPhoto
-        src={`https://image.tmdb.org/t/p/original/${details.profile_path}`}
-        alt={details.name}
+        src={`https://image.tmdb.org/t/p/original/${details?.profile_path}`}
+        alt={details?.name}
       />
       <PeopleDetailsContent>
-        <PeopleDetailsHeader>{details.name}</PeopleDetailsHeader>
+        <PeopleDetailsHeader>{details?.name}</PeopleDetailsHeader>
         <PeopleDetailsData>
           <PeopleDetailsBirthDate>Date of birth:</PeopleDetailsBirthDate>
           <PeopleDetailsBirthDateContent>
-            {details.birthday}
+            {details?.birthday}
           </PeopleDetailsBirthDateContent>
           <PeopleDetailsBirthPlace>Place of birth:</PeopleDetailsBirthPlace>
           <PeopleDetailsBirthPlaceContent>
-            {details.place_of_birth}
+            {details?.place_of_birth}
           </PeopleDetailsBirthPlaceContent>
         </PeopleDetailsData>
       </PeopleDetailsContent>
-      <PeopleDetailsBiography>{details.biography}</PeopleDetailsBiography>
+      <PeopleDetailsBiography>{details?.biography}</PeopleDetailsBiography>
     </PeopleDetailsWrapper>
   );
 };

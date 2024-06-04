@@ -22,26 +22,26 @@ const Details = ({ movieDetails }) => {
   return (
     <DetailsWrapper>
       <DetailsPoster
-        src={`https://image.tmdb.org/t/p/w342/${movieDetails.poster_path}`}
+        src={`https://image.tmdb.org/t/p/w342/${movieDetails?.poster_path}`}
         alt="Movie Poster"
       />
       <DetailsContent>
-        <DetailsHeader>{movieDetails.title}</DetailsHeader>
+        <DetailsHeader>{movieDetails?.title}</DetailsHeader>
         <DetailsProductionYear>{year}</DetailsProductionYear>
         <DetailsProductionData>
           <DetailsProduction>Production:</DetailsProduction>
           <DetailsProductionContent>
-            {movieDetails.production_countries
+            {movieDetails?.production_countries
               .map((country) => country.name)
               .join(", ")}
           </DetailsProductionContent>
           <DetailsReleaseDate>Release date:</DetailsReleaseDate>
           <DetailsReleaseDateContent>
-            {movieDetails.release_date}
+            {movieDetails?.release_date}
           </DetailsReleaseDateContent>
         </DetailsProductionData>
         <DetailsGenres>
-          {movieDetails.genres.map(({ id, name }) => (
+          {movieDetails?.genres.map(({ id, name }) => (
             <DetailsGenereItem key={id}>{name}</DetailsGenereItem>
           ))}
         </DetailsGenres>
@@ -53,7 +53,7 @@ const Details = ({ movieDetails }) => {
           }}
         />
       </DetailsContent>
-      <DetailsOverview>{movieDetails.overview}</DetailsOverview>
+      <DetailsOverview>{movieDetails?.overview}</DetailsOverview>
     </DetailsWrapper>
   );
 };

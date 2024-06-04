@@ -7,7 +7,7 @@ import {fetchMovieCredits,selectMovieCreditsState,} from "./Credits/creditsSlice
 import Credits from "./Credits";
 import { MovieDetailsWrapper } from "./styled";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
+import { Loading } from "../../LoadingPage";
 const MovieDetails = () => {
   const dispatch = useDispatch();
   const movieData = useSelector(selectMovieDetailsState);
@@ -27,7 +27,7 @@ const MovieDetails = () => {
   return (
     <>
       {movieData.status && movieCredits.status === "loading" && (
-        <p>Loading...</p>
+        <p><Loading/></p>
       )}
       {movieData.status && movieCredits.status === "success" && (
         <MovieDetailsWrapper>
