@@ -1,14 +1,14 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import getCredits from "./creditsAPI";
+import {getCredits} from "./creditsAPI";
 import {
   fetchMovieCredits,
   fetchMovieCreditsError,
   fetchMovieCreditsSuccess,
 } from "./creditsSlice";
 
-export function* fetchMovieCreditsHandler() {
+export function* fetchMovieCreditsHandler({payload: movieIp}) {
   try {
-    const credits = yield call(getCredits);
+    const credits = yield call(getCredits, movieIp);
     yield put(fetchMovieCreditsSuccess(credits));
   } catch (error) {
     yield put(fetchMovieCreditsError());

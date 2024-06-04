@@ -1,10 +1,15 @@
 import styled from "styled-components";
+import { mediaQuery } from "../../../core/App/theme";
 
 export const GenresList = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0px;
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0px;
+
+	@media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+		padding: 0px;
+	}
 `;
 
 export const GenresItem = styled.li`

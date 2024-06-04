@@ -27,6 +27,7 @@ export const {
   fetchPeopleDetailsError,
 } = peopleDetailsSlice.actions;
 
-export const selectPeopleDetailsState = (state) => state.peopleDetails;
+export const selectPeopleState = state => state.peopleDetails;
+export const selectPeopleDetailsState = state => selectPeopleState(state).details;
 
 export default peopleDetailsSlice.reducer;

@@ -1,22 +1,22 @@
-import Error from "../ErrorPage";
 import { Loading } from "../LoadingPage";
 import { Popular } from "../MoviesBrowser/PopularMovies/Popular";
 
-export const PageView = ({ status, repositories }) => {
-  switch (status) {
-    case "initial":
-      return null;
+export const PageView = ({status, repositories}) => {
 
-    case "loading":
-      return <Loading />;
+    switch (status) {
+        case "initial":
+            return null;
 
-    case "error":
-      return <Error />;
+        case "loading":
+            return <Loading />;
 
-    case "success":
-      return <Popular repositories={repositories} />;
+        case "error":
+            return <Loading />;
 
-    default:
-      throw new Error(`incorrect status: ${status}`);
-  }
+        case "success":
+            return <Popular repositories={repositories} />
+
+            default:
+                throw new Error (`incorrect status: ${status}`);
+    }
 };

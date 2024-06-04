@@ -18,7 +18,7 @@ const Backdrop = ({ movieDetails }) => {
           <BackdropImg src={backdropUrl} alt="Backdrop Poster" />
         </BackdropVignette>
         <BackdropWrapper>
-          <BackdropTitle>{movieDetails.title}</BackdropTitle>
+          <BackdropTitle>{movieDetails?.title}</BackdropTitle>
           <Rating variant="backdrop" ratingData={movieDetails} />
         </BackdropWrapper>
       </BackdropContainer>

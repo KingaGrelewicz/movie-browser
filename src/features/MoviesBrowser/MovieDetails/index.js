@@ -11,6 +11,7 @@ import {
   selectMovieCreditsState,
 } from "./Credits/creditsSlice";
 import Credits from "./Credits";
+
 import { useParams } from "react-router-dom";
 import { Loading } from "../../LoadingPage";
 import Error from "../../ErrorPage";
@@ -28,11 +29,12 @@ const MovieDetails = () => {
 
   useEffect(() => {
     dispatch(fetchMovieDetails(movieIp));
-    dispatch(fetchMovieCredits());
+    dispatch(fetchMovieCredits(movieIp));
   }, [dispatch]);
 
   return (
     <>
+
       {movieData.status && movieCredits.status === "loading" && <Loading />}
       {movieData.status && movieCredits.status === "success" && (
         <>

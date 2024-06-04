@@ -10,6 +10,7 @@ import {
   CreditsTile,
   CreditsWrapper,
 } from "./styled";
+import { Links } from "../../PopularMovies/TileMovie/styled";
 
 const Credits = ({ credits, type }) => {
   return (
