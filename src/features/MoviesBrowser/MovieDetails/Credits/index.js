@@ -14,7 +14,8 @@ import { Links } from "../../PopularMovies/TileMovie/styled";
 
 const Credits = ({ credits, type }) => {
   return (
-    <CreditsContainer>
+    
+    <CreditsContainer >
       {type && <CreditsHeader>{type}</CreditsHeader>}
       <CreditsWrapper>
         {credits.map((person) => (
@@ -30,7 +31,7 @@ const Credits = ({ credits, type }) => {
               </CreditsDefaultPoster>
             )}
             <CreditsContent>
-              <CreditsName>{person.name}</CreditsName>
+              <CreditsName><Links to={`/people/${person.id}`}>{person.name}</Links></CreditsName>
               <CreditsData>{person.character || person.job}</CreditsData>
             </CreditsContent>
           </CreditsTile>
