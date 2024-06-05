@@ -13,16 +13,15 @@ import {
   PeopleDetailsWrapper,
 } from "./styled";
 
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-const PeopleDetails = () => {
+const PeopleDetails = ({peopleIp}) => {
+
   const detailsPeople = useSelector(selectPeopleState);
   const details = detailsPeople.details
+
   const dispatch = useDispatch();
-  const params = useParams();
-  const peopleIp = params.id;
 
 
   useEffect(() => {

@@ -6,9 +6,9 @@ import {
   fetchPeopleCreditsSuccess,
 } from "./peopleCreditsSlice";
 
-export function* fetchPeopleCreditsHandler() {
+export function* fetchPeopleCreditsHandler({payload: peopleIp}) {
   try {
-    const creditsData = yield call(getPeopleCredits);
+    const creditsData = yield call(getPeopleCredits, peopleIp);
     yield put(fetchPeopleCreditsSuccess(creditsData));
   } catch (error) {
     yield put(fetchPeopleCreditsError());

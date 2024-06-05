@@ -1,26 +1,25 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchPeopleDetails,
-  selectPeopleDetailsState,
-} from "./PeopleDetails/peopleDetailsSlice";
-import {
-  fetchPeopleCredits,
-  selectPeopleCreditsState,
-} from "./PeopleCredits/peopleCreditsSlice";
+import {fetchPeopleDetails,selectPeopleState,} from "./PeopleDetails/peopleDetailsSlice";
+import {fetchPeopleCredits,selectPeopleCreditsState,} from "./PeopleCredits/peopleCreditsSlice";
 import { PeopleViewWrapper } from "./styled";
 import PeopleCredits from "./PeopleCredits";
 import PeopleDetails from "./PeopleDetails";
 import { Loading } from "../../LoadingPage";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 const PeopleView = () => {
   const dispatch = useDispatch();
-  const details = useSelector(selectPeopleDetailsState);
+
+  const params = useParams();
+  const peopleIp = params.id;
+
+  const details = useSelector(selectPeopleState);
   const peopleCredits = useSelector(selectPeopleCreditsState);
 
   useEffect(() => {
-    dispatch(fetchPeopleDetails());
-    dispatch(fetchPeopleCredits());
+    dispatch(fetchPeopleDetails(peopleIp));
+    dispatch(fetchPeopleCredits(peopleIp));
   }, [dispatch]);
 
   return (
@@ -28,9 +27,9 @@ const PeopleView = () => {
       {details.status && peopleCredits.status === "loading" && <Loading />}
       {details.status && peopleCredits.status === "success" && (
         <PeopleViewWrapper>
-          <PeopleDetails />
-          <PeopleCredits type="Cast" />
-          <PeopleCredits type="Crew" />
+          <PeopleDetails peopleIp={peopleIp} />
+          <PeopleCredits peopleIp={peopleIp} type="Cast" />
+          <PeopleCredits peopleIp={peopleIp} type="Crew" />
         </PeopleViewWrapper>
       )}
       {details.status && peopleCredits.status === "error" && (
@@ -41,3 +40,4 @@ const PeopleView = () => {
 };
 
 export default PeopleView;
+

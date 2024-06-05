@@ -4,7 +4,7 @@ import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { toPeople } from "./routes";
 import MovieDetails from "../../features/MoviesBrowser/MovieDetails";
 import PopularPeopleView from "../../features/MoviesBrowser/PopularPeopleView";
-import PeopleDetails from "../../features/MoviesBrowser/PeopleView/PeopleDetails";
+import PeopleView from "../../features/MoviesBrowser/PeopleView";
 
 
 export const App = () => (
@@ -12,7 +12,7 @@ export const App = () => (
     <Navigation />
     <Switch>
     <Route path="/people/:id">
-        <PeopleDetails />
+        <PeopleView />
       </Route>
       <Route path="/movies/:id">
         <MovieDetails />
