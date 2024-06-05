@@ -1,22 +1,24 @@
+import { useSelector } from "react-redux";
 import { TileMovie } from "../TileMovie";
 import { Title, Movies } from "./styled";
+import { selectMoviesByQuery } from "../../movieBrowserSlice";
 
-export const Popular = ({ repositories, query}) => {
+export const Popular = ({ query }) => {
+	const repositories = useSelector((state) => selectMoviesByQuery(state, query));
+
 	const films = Object.values(repositories.results);
-	console.log(films);
 
-	const filteredMovies = films.filter(movie =>
-        movie.title.includes(query)
-    );
         
 	return (
 			<>
+			{films.map(({repositories}) => (
+				<>
 				<Title>Popular movies</Title>
 				<Movies>
-				{filteredMovies.map((movie) => (
-                    <TileMovie key={movie.id} repositories={movie} />
-                ))}
+                    <TileMovie repositories={repositories} />
 				</Movies>
+				</>
+			))}
 			</>
 	);
 };

@@ -33,4 +33,15 @@ const selectMovieBrowserState = state => state.movieBrowser;
 export const selectRepositories = state => selectMovieBrowserState(state).repositories;
 export const selectRepositoriesStatus = state => selectMovieBrowserState(state).status;
 
+export const selectMoviesByQuery = (state, query) => {
+    const repositories = selectRepositories(state);
+
+    if (!query || query.trim() === "") {
+        return repositories;
+    }
+
+    return repositories.filter(({title}) => 
+    title.toUpperCase().includes(query.trim().toUpperCase()));
+}
+
 export default movieBrowserSlice.reducer;
