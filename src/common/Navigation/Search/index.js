@@ -8,16 +8,23 @@ import { useLocation } from "react-router-dom";
 const Search = () => {
   const location = useLocation();
   const query = useQueryParameter("szukaj");
-  const onInputChange = useOnInputChange();
 
-  const isSearchFoePeople = location.pathname.startsWith(toPeople());
+  const [inputValue, setInputValue] = useState(query);
+  const onInputChange = useOnInputChange(setInputValue);
+
+
+  const isSearchForPeople = location.pathname.startsWith(toPeople());
+
+  useEffect(() => {
+    setInputValue(query);
+  }, [query]);
 
   return (
     <Wrapper>
       <Input 
-        value={query || ""}
-        onChange={onInputChange}
-        placeholder={`Search for ${isSearchFoePeople ? "people" : "movies"}...`} 
+        value={inputValue || ""}
+        onChange={({ target: { value } }) => onInputChange({ newValue: value, isSearchForPeople })}
+        placeholder={`Search for ${isSearchForPeople ? "people" : "movies"}...`} 
       />
     </Wrapper>
   );
