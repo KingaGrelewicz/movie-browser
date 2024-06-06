@@ -12,13 +12,13 @@ export const PeopleCreditsHeader = styled.h2`
     margin-top: 24px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    margin: 24px 16px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     max-width: 1199px;
     margin: 24px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    margin: 24px 16px;
   }
 `;
 
@@ -29,16 +29,16 @@ export const PeopleCreditsWrapper = styled.div`
   justify-content: center;
   gap: 24px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    margin: 0 8px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 1199px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    margin: 0 8px;
   }
 `;
 
@@ -50,15 +50,16 @@ export const PeopleCreditsTile = styled.div`
   flex-flow: column;
   max-width: 324px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 154px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
   }
+
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     max-width: 185px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 260px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    max-width: 154px;
   }
 `;
 
@@ -72,13 +73,13 @@ export const PeopleCreditsPoster = styled.img`
   align-self: center;
   margin: 0;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    padding: 8px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     max-width: 260px;
     height: 374px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    padding: 8px;
   }
 `;
 export const PeopleCreditsDefaultPoster = styled.div`
@@ -88,9 +89,9 @@ export const PeopleCreditsDefaultPoster = styled.div`
   margin: 16px;
   background: ${({ theme }) => theme.color.silver};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 292px;
-    height: 434px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
+    height: 342px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
@@ -99,9 +100,9 @@ export const PeopleCreditsDefaultPoster = styled.div`
     padding: 0;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 260px;
-    height: 342px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    width: 292px;
+    height: 434px;
   }
 `;
 
@@ -132,16 +133,16 @@ export const PeopleCreditsMovieTitle = styled.h3`
   word-break: break-word;
   white-space: normal;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 14px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 20px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 16px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 20px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 14px;
   }
 `;
 
@@ -149,16 +150,16 @@ export const PeopleCreditsData = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 13px;
   }
 `;
 
@@ -166,15 +167,15 @@ export const PeopleCreditsProductionYear = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 13px;
   }
 `;
