@@ -8,6 +8,7 @@ import PeopleDetails from "./PeopleDetails";
 import { Loading } from "../../LoadingPage";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
+
 const PeopleView = () => {
   const dispatch = useDispatch();
 
@@ -26,11 +27,14 @@ const PeopleView = () => {
     <>
       {details.status && peopleCredits.status === "loading" && <Loading />}
       {details.status && peopleCredits.status === "success" && (
+       <>
         <PeopleViewWrapper>
           <PeopleDetails peopleIp={peopleIp} />
           <PeopleCredits peopleIp={peopleIp} type="Cast" />
           <PeopleCredits peopleIp={peopleIp} type="Crew" />
         </PeopleViewWrapper>
+        
+       </>
       )}
       {details.status && peopleCredits.status === "error" && (
         <div>Error loading details</div>

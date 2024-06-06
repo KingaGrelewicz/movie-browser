@@ -20,7 +20,7 @@ const MovieDetails = () => {
   const dispatch = useDispatch();
   const movieData = useSelector(selectMovieDetailsState);
   const movieCredits = useSelector(selectMovieCreditsState);
-  console.log(movieCredits.credits);
+  
   const { cast, crew } = movieCredits.credits || {};
 
   const movieDetails = movieData.details;

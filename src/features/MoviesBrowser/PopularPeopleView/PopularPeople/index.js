@@ -11,8 +11,14 @@ import {
 } from "./styled";
 import { Links } from "../../PopularMovies/TileMovie/styled";
 import { selectPopularPeopleState } from "./popularPeopleSlice";
+import { Paginations } from "../../../Pagination";
+import { useDispatch } from "react-redux";
+import { selectPages} from "./popularPeopleSlice";
+import { useEffect } from "react";
+import { fetchPeople } from "./popularPeopleSlice";
+import { setPages } from "./popularPeopleSlice";
 
-const PopularPeople = () => {
+const PopularPeople = ({pages}) => {
   const popularPeople = useSelector(selectPopularPeopleState);
 
   const peopleArray = popularPeople.data
@@ -42,6 +48,7 @@ const PopularPeople = () => {
           </PopularPeopleTile>
         ))}
       </PopularPeopleWrapper>
+      <Paginations pages={pages} setPages={setPages}/>
     </>
   );
 };

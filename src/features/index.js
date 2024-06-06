@@ -1,56 +1,31 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectRepositories, selectRepositoriesStatus, fetchRepositories, } from "./MoviesBrowser/movieBrowserSlice";
+import { useSelector } from "react-redux";
+import { selectRepositories, selectRepositoriesStatus } from "./MoviesBrowser/movieBrowserSlice";
 import { Container } from "./styled";
 import { PageView } from "./PageView";
 import { Paginations } from "./Pagination";
-import { selectPages } from "./MoviesBrowser/movieBrowserSlice";
+import { selectPages, fetchRepositories } from "./MoviesBrowser/movieBrowserSlice";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { setPages } from "./MoviesBrowser/movieBrowserSlice";
 
 export const PageStatus = () => {
+  const dispatch = useDispatch();
+  const repositoriesStatus = useSelector(selectRepositoriesStatus);
+  const repositories = useSelector(selectRepositories);
+  const pages = useSelector(selectPages);
 
-    const repositoriesStatus = useSelector(selectRepositoriesStatus);
-    const repositories = useSelector(selectRepositories);
-    const pages = useSelector(selectPages);
+  useEffect(() => {
+    dispatch(fetchRepositories(pages));
+  }, [pages]);
 
-    const dispatch = useDispatch();
+  return (
+    <Container>
+      <PageView
+        status={repositoriesStatus}
+        repositories={repositories} />
+      <Paginations pages={pages} setPages={setPages} />
+    </Container>
 
-    const incrementPages = () => {
-        dispatch(setPages(pages + 1));
-    };
-
-    const decreasePages = () => {
-        dispatch(setPages(pages - 1));
-    };
-
-    const convertToLast = (argument) => {
-        return 500;
-      };
-    
-      const lastPages = () => {
-        dispatch(setPages(convertToLast(pages)));
-      };
-
-      const convertToOne = (argument) => {
-        return 1;
-      };
-    
-      const firstPages = () => {
-        dispatch(setPages(convertToOne(pages)));
-      };
-
-    useEffect(() => {
-        dispatch(fetchRepositories(pages));
-    }, [pages]);
-
-    return (
-        <Container>
-            <PageView
-                status={repositoriesStatus}
-                repositories={repositories} />
-            <Paginations pages={pages} incrementPages={incrementPages} decreasePages={decreasePages} firstPages={firstPages} lastPages={lastPages}/>
-        </Container>
-
-    );
+  );
 
 };

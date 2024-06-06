@@ -5,6 +5,7 @@ const popularPeopleSlice = createSlice({
   initialState: {
     status: "initial",
     data: null,
+    pages: 1,
   },
   reducers: {
     fetchPeople: (state) => {
@@ -18,17 +19,20 @@ const popularPeopleSlice = createSlice({
       state.status = "error";
       state.data = action.payload;
     },
+    setPages: (state, { payload: pages }) => ({
+      ...state,
+      pages,
+  }),
   },
 });
 
-export const { fetchPeople, fetchPeopleSuccess, fetchPeopleError } =
+export const { fetchPeople, fetchPeopleSuccess, fetchPeopleError, setPages } =
   popularPeopleSlice.actions;
 
 export const selectPopularPeopleState = (state) => state.popularPeople;
 
-export const selectPopularPeopleData = (state) =>
-  selectPopularPeopleState(state).data;
-export const selectPopularPeopleStatus = (state) =>
-  selectPopularPeopleState(state).status;
+export const selectPopularPeopleData = (state) =>selectPopularPeopleState(state).data;
+export const selectPages= (state) =>selectPopularPeopleState(state).pages;
+export const selectPopularPeopleStatus = (state) =>selectPopularPeopleState(state).status;
 
 export default popularPeopleSlice.reducer;

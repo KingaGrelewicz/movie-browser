@@ -4,22 +4,23 @@ import {
   fetchPeople,
   selectPopularPeopleData,
   selectPopularPeopleStatus,
+  selectPages,
 } from "./PopularPeople/popularPeopleSlice";
 import { PopularPeopleStatus } from "./PopularPeopleStatus";
 
 const PopularPeopleView = () => {
   const dispatch = useDispatch();
 
+  const pages = useSelector(selectPages);
   const peopleStatus = useSelector(selectPopularPeopleStatus);
-  const peopleData = useSelector(selectPopularPeopleData);
 
   useEffect(() => {
-    dispatch(fetchPeople());
-  }, [dispatch]);
+    dispatch(fetchPeople(pages));
+  }, [pages]);
 
   return (
     <div>
-      <PopularPeopleStatus status={peopleStatus} data={peopleData} />
+      <PopularPeopleStatus pages ={pages} status={peopleStatus} />
     </div>
   );
 };
