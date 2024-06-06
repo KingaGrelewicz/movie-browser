@@ -6,19 +6,16 @@ import { selectMoviesByQuery } from "../../movieBrowserSlice";
 export const Popular = ({ query }) => {
 	const repositories = useSelector((state) => selectMoviesByQuery(state, query));
 
-	const films = Object.values(repositories.results);
-
-        
 	return (
-			<>
-			{films.map(({repositories}) => (
-				<>
-				<Title>Popular movies</Title>
-				<Movies>
-                    <TileMovie repositories={repositories} />
-				</Movies>
-				</>
-			))}
-			</>
+		<>
+			<Title>Popular movies</Title>
+			<Movies>
+				{Array.isArray(repositories) &&
+					repositories?.map(({ movies }) => {
+						console.log("Rendering movie:", movies);
+						return <TileMovie key={movies.id} {...movies} />;
+					})}
+			</Movies>
+		</>
 	);
 };
