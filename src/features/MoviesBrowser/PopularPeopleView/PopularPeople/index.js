@@ -12,10 +12,6 @@ import {
 import { Links } from "../../PopularMovies/TileMovie/styled";
 import { selectPopularPeopleState } from "./popularPeopleSlice";
 import { Paginations } from "../../../Pagination";
-import { useDispatch } from "react-redux";
-import { selectPages} from "./popularPeopleSlice";
-import { useEffect } from "react";
-import { fetchPeople } from "./popularPeopleSlice";
 import { setPages } from "./popularPeopleSlice";
 
 const PopularPeople = ({pages}) => {

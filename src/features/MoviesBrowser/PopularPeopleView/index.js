@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeople,
-  selectPopularPeopleData,
   selectPopularPeopleStatus,
   selectPages,
 } from "./PopularPeople/popularPeopleSlice";
