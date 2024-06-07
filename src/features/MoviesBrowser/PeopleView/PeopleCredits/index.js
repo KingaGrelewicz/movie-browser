@@ -51,28 +51,39 @@ const PeopleCredits = ({ type }) => {
               : ""}
           </PeopleCreditsProductionYear>
           <Genres genreIds={person.genre_ids} />
-          <Rating variant="movie" ratingData={person} />
+          <Rating variant="movies" ratingData={person} />
         </PeopleCreditsContent>
       </PeopleCreditsTile>
     ));
   };
 
+  const castCount = creditsData.cast ? creditsData.cast.length : 0;
+  const crewCount = creditsData.crew ? creditsData.crew.length : 0;
+
+  const renderHeader = () => {
+    if (type === "Cast" && creditsData.cast && creditsData.cast.length > 0) {
+      return `Movie - Cast (${castCount})`;
+    } else if (
+      type === "Crew" &&
+      creditsData.crew &&
+      creditsData.crew.length > 0
+    ) {
+      return `Movie - Crew (${crewCount})`;
+    }
+    return null;
+  };
+
+  const hasCredits =
+    (type === "Cast" && castCount > 0) || (type === "Crew" && crewCount > 0);
+
   return (
     <>
-      {type && (
-        <PeopleCreditsHeader>
-          {type === "Cast" ? "Movie - Cast" : "Movie - Crew"}
-        </PeopleCreditsHeader>
+      {type && hasCredits && (
+        <PeopleCreditsHeader>{renderHeader()}</PeopleCreditsHeader>
       )}
       <PeopleCreditsWrapper>
-        {creditsData &&
-          creditsData.cast &&
-          type === "Cast" &&
-          renderCredits(creditsData.cast)}
-        {creditsData &&
-          creditsData.crew &&
-          type === "Crew" &&
-          renderCredits(creditsData.crew)}
+        {type === "Cast" && castCount > 0 && renderCredits(creditsData.cast)}
+        {type === "Crew" && crewCount > 0 && renderCredits(creditsData.crew)}
       </PeopleCreditsWrapper>
     </>
   );
