@@ -40,6 +40,7 @@ export const RatingWrapper = styled.div`
       font-size: 22px;
       grid-gap: 12px;
       margin-bottom: 16px;
+      align-items: end;
 
       @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
         grid-gap: 8px;
