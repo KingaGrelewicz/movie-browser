@@ -1,16 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  PeopleCreditsContent,
-  PeopleCreditsData,
-  PeopleCreditsDefaultPoster,
-  PeopleCreditsHeader,
-  PeopleCreditsMovieTitle,
-  PeopleCreditsPoster,
-  PeopleCreditsPosterIcon,
-  PeopleCreditsProductionYear,
-  PeopleCreditsTile,
-  PeopleCreditsWrapper,
+import {PeopleCreditsContent,PeopleCreditsData,PeopleCreditsDefaultPoster,PeopleCreditsHeader,PeopleCreditsMovieTitle,PeopleCreditsPoster,
+  PeopleCreditsPosterIcon,PeopleCreditsProductionYear,PeopleCreditsTile,PeopleCreditsWrapper,
 } from "./styled";
+import { Links } from "../../PopularMovies/TileMovie/styled";
 import { selectPeopleCreditsState } from "./peopleCreditsSlice";
 import Rating from "../../Rating";
 import Genres from "../../Genres";
@@ -39,8 +31,8 @@ const PeopleCredits = ({ type }) => {
           </PeopleCreditsDefaultPoster>
         )}
         <PeopleCreditsContent>
-          <PeopleCreditsMovieTitle>
-            {person.original_title}
+          <PeopleCreditsMovieTitle><Links to={`/movies/${person.id}`}>
+            {person.original_title}</Links>
           </PeopleCreditsMovieTitle>
           <PeopleCreditsData>
             {person.character || person.job}
