@@ -7,7 +7,7 @@ import { useLocation } from "react-router-dom";
 
 const Search = () => {
   const location = useLocation();
-  const query = useQueryParameter("szukaj");
+  const query = useQueryParameter("query");
 
   const [inputValue, setInputValue] = useState(query);
   const onInputChange = useOnInputChange(setInputValue);

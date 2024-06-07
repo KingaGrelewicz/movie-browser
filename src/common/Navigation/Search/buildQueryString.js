@@ -11,5 +11,7 @@ export const buildQueryString = ( parameters, initialQueryString) => {
         }
     }
 
-    return urlSearchParams.toString();
+    const queryString = urlSearchParams.toString();
+
+    return queryString;
 };

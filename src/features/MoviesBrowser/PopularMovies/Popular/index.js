@@ -4,16 +4,15 @@ import { Title, Movies } from "./styled";
 import { selectMoviesByQuery } from "../../movieBrowserSlice";
 
 export const Popular = ({ query }) => {
-	const repositories = useSelector((state) => selectMoviesByQuery(state, query));
+	const films = useSelector((state) => selectMoviesByQuery(state, query));
 
 	return (
 		<>
 			<Title>Popular movies</Title>
 			<Movies>
-				{Array.isArray(repositories) &&
-					repositories?.map(({ movies }) => {
-						console.log("Rendering movie:", movies);
-						return <TileMovie key={movies.id} {...movies} />;
+				{Array.isArray(films) &&
+					films.map((movie) => {
+						return <TileMovie key={movie.id} {...movie} />;
 					})}
 			</Movies>
 		</>
