@@ -24,23 +24,22 @@ export const BackdropVignette = styled.div`
       inset -100px 10px 100px ${({ theme }) => theme.color.black},
       inset 100px -10px 100px ${({ theme }) => theme.color.black},
       inset -100px -10px 100px ${({ theme }) => theme.color.black};
+
+      @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+        box-shadow: inset 50px 10px 50px ${({ theme }) => theme.color.black},
+      inset -50px 10px 50px ${({ theme }) => theme.color.black},
+      inset 50px -10px 50px ${({ theme }) => theme.color.black},
+      inset -50px -10px 50px ${({ theme }) => theme.color.black};
+      }
   }
 `;
 
 export const BackdropImg = styled.img`
   display: block;
   margin: 0 auto;
+  width: 100%;
   max-width: 1280px;
-
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 767px;
-  }
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    max-width: 991px;
-  }
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 1199px;
-  }
+  min-width: 300px;
 `;
 
 export const BackdropWrapper = styled.div`
@@ -51,14 +50,14 @@ export const BackdropWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    padding: 8px 16px;
-    gap: 4px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     padding: 8px 16px;
     gap: 8px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    padding: 8px 16px;
+    gap: 4px;
   }
 `;
 
@@ -68,16 +67,17 @@ export const BackdropTitle = styled.h2`
   font-weight: bold;
   margin: 0;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 24px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 56px;
+    margin-left: 24px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 48px;
     margin: 16px;
   }
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 56px;
-    margin-left: 24px;
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 24px;
   }
 `;

@@ -12,11 +12,9 @@ export const PeopleDetailsWrapper = styled.div`
   padding: 40px;
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.grey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 767px;
-    margin: 16px;
-    grid-gap: 16px;
-    padding: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    margin: 24px;
+    padding: 24px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
@@ -24,9 +22,11 @@ export const PeopleDetailsWrapper = styled.div`
     padding: 24px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    margin: 24px;
-    padding: 24px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    max-width: 767px;
+    margin: 16px;
+    grid-gap: 16px;
+    padding: 16px;
   }
 `;
 
@@ -36,15 +36,12 @@ export const PeopleDetailsPhoto = styled.img`
   grid-row: span 2;
   max-width: 399px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 154px;
-  }
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     max-width: 185px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 300px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    max-width: 154px;
   }
 `;
 
@@ -53,12 +50,12 @@ export const PeopleDetailsContent = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    gap: 12px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     gap: 16px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    gap: 12px;
   }
 `;
 
@@ -67,12 +64,12 @@ export const PeopleDetailsHeader = styled.h2`
   font-weight: bold;
   margin: 0;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 16px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 26px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 16px;
   }
 `;
 
@@ -97,13 +94,13 @@ export const PeopleDetailsBirthDate = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    font-size: 14px;
+  }
+
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 12px;
     display: none;
-  }
-
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    font-size: 14px;
   }
 `;
 
@@ -111,12 +108,12 @@ export const PeopleDetailsBirthDateContent = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.black};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 12px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 12px;
   }
 `;
 
@@ -124,24 +121,25 @@ export const PeopleDetailsBirthPlace = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    font-size: 14px;
+  }
+
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 12px;
     display: none;
-  }
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    font-size: 14px;
   }
 `;
 
 export const PeopleDetailsBirthPlaceContent = styled.span`
   color: ${({ theme }) => theme.color.black};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 12px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 12px;
   }
 `;
 
@@ -151,15 +149,15 @@ export const PeopleDetailsBiography = styled.p`
   grid-column-start: 2;
   margin: 0;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 14px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    font-size: 16px;
     display: grid;
     grid-column-start: 1;
     grid-column: span 2;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    font-size: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 14px;
     display: grid;
     grid-column-start: 1;
     grid-column: span 2;

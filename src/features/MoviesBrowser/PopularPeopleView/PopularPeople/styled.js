@@ -11,8 +11,8 @@ export const PopularPeopleHeader = styled.h1`
   font-size: 36px;
   font-style: bold;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 20px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 32px;
     margin: 24px 16px;
   }
 
@@ -20,8 +20,9 @@ export const PopularPeopleHeader = styled.h1`
     font-size: 28px;
     margin: 24px 16px;
   }
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 32px;
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 20px;
     margin: 24px 16px;
   }
 `;
@@ -43,16 +44,16 @@ export const PopularPeopleTile = styled.div`
   flex-flow: column;
   align-items: center;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    flex: 0 0 120px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    flex: 0 0 178px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     flex: 0 0 178px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    flex: 0 0 178px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    flex: 0 0 120px;
   }
 `;
 
@@ -62,16 +63,16 @@ export const PopularPeoplePhoto = styled.img`
   border-radius: 20px;
   display: block;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    padding: 8px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    padding: 14px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     padding: 12px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    padding: 14px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    padding: 8px;
   }
 `;
 
@@ -82,9 +83,10 @@ export const PopularPeopleDefaultPoster = styled.div`
   margin: 16px;
   background: ${({ theme }) => theme.color.silver};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     width: 150px;
     height: 225px;
+    padding: 0;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
@@ -93,10 +95,9 @@ export const PopularPeopleDefaultPoster = styled.div`
     padding: 0;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     width: 150px;
     height: 225px;
-    padding: 0;
   }
 `;
 
@@ -116,12 +117,12 @@ export const PopularPeopleName = styled.h2`
   padding: 0 16px 16px 16px;
   text-align: center;
 
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    font-size: 16px;
+  }
+
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     font-size: 14px;
     padding: 8px;
-  }
-
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    font-size: 16px;
   }
 `;
