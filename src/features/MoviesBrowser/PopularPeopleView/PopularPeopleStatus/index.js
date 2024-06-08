@@ -2,8 +2,8 @@ import Error from "../../../ErrorPage";
 import { Loading } from "../../../LoadingPage";
 import PopularPeople from "../PopularPeople";
 
-export const PopularPeopleStatus = ({ status, query }) => {
-  
+export const PopularPeopleStatus = ({ pages, status, query }) => {
+
   switch (status) {
     case "initial":
       return null;
@@ -15,8 +15,8 @@ export const PopularPeopleStatus = ({ status, query }) => {
       return <Error />;
 
     case "success":
-      
-      return <PopularPeople query={query} />;
+
+      return <PopularPeople pages={pages} query={query} />;
 
     default:
       throw new Error(`incorrect status: ${status}`);
