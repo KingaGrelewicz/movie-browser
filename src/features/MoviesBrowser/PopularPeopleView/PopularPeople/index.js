@@ -9,14 +9,10 @@ import {
   PopularPeopleTile,
   PopularPeopleWrapper,
 } from "./styled";
-import { selectPopularPeopleState } from "./popularPeopleSlice";
+import { selectPeopleByQuery } from "./popularPeopleSlice";
 
-const PopularPeople = () => {
-  const popularPeople = useSelector(selectPopularPeopleState);
-
-  const peopleArray = popularPeople.data
-    ? Object.values(popularPeople.data.results)
-    : [];
+const PopularPeople = ({ query }) => {
+  const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
 
   return (
     <>
@@ -24,7 +20,7 @@ const PopularPeople = () => {
         <PopularPeopleHeader>POPULAR PEOPLE</PopularPeopleHeader>
       </PopularPeopleHeaderWrapper>
       <PopularPeopleWrapper>
-        {peopleArray.map((people) => (
+        {popularPeople.map((people) => (
           <PopularPeopleTile key={people.id}>
             {people.profile_path ? (
               <PopularPeoplePhoto
