@@ -50,7 +50,7 @@ export const List = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 23px 0px;
   margin: 0 auto;
   max-width: 1368px;
