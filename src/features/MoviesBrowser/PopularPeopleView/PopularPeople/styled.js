@@ -43,6 +43,11 @@ export const PopularPeopleTile = styled.div`
   flex: 0 0 200px;
   flex-flow: column;
   align-items: center;
+  transition: 1s;
+
+  &:hover {
+    scale: 1.05;
+  }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     flex: 0 0 178px;
