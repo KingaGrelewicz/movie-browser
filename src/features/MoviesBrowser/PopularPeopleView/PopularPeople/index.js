@@ -9,12 +9,14 @@ import {
   PopularPeopleTile,
   PopularPeopleWrapper,
 } from "./styled";
+import { selectPeopleByQuery } from "./popularPeopleSlice";
 import { Links } from "../../PopularMovies/TileMovie/styled";
 import { Paginations } from "../../../Pagination";
 import { setPages } from "./popularPeopleSlice";
 import { selectPeopleByQuery } from "./popularPeopleSlice";
 
 const PopularPeople = ({pages, query}) => {
+
   const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
 
   return (

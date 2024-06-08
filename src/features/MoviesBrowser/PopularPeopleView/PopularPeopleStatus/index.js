@@ -3,6 +3,7 @@ import { Loading } from "../../../LoadingPage";
 import PopularPeople from "../PopularPeople";
 
 export const PopularPeopleStatus = ({ pages, status, query }) => {
+
   switch (status) {
     case "initial":
       return null;
@@ -14,6 +15,7 @@ export const PopularPeopleStatus = ({ pages, status, query }) => {
       return <Error />;
 
     case "success":
+
       return <PopularPeople pages={pages} query={query} />;
 
     default:
