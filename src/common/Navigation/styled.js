@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 import { mediaQuery } from "../../core/App/theme";
 import { ReactComponent as MovieIcon } from "./Icon/CameraIcon.svg";
 
+export const NavigationBar = styled.nav`
+  background: ${({ theme }) => theme.color.black};
+`;
+
 const activeClassName = "link-active";
 
 export const StyledNavLink = styled(NavLink).attrs(() => ({
@@ -42,14 +46,14 @@ export const Item = styled.li`
 `;
 
 export const List = styled.ul`
-  background: ${({ theme }) => theme.color.black};
   list-style: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 23px 0px;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 1368px;
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     display: grid;
