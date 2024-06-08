@@ -1,10 +1,10 @@
 import Search from "./Search";
-import { Wrapper, List, Item, StyledNavLink, PageTitle, Icon } from "./styled";
+import { Wrapper, List, Item, StyledNavLink, PageTitle, Icon, NavigationBar } from "./styled";
 import { toHomePage, toPeople } from "../../core/App/routes";
 
 const Navigation = () => {
   return (
-    <nav>
+    <NavigationBar>
       <List>
         <Wrapper>
           <PageTitle>
@@ -20,7 +20,7 @@ const Navigation = () => {
         </Wrapper>
         <Search />
       </List>
-    </nav>
+    </NavigationBar>
   );
 };
 
