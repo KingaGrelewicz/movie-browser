@@ -23,3 +23,4 @@ export const PageView = ({ status, repositories }) => {
                 throw new Error (`incorrect status: ${status}`);
     }
 };
+
