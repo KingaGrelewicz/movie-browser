@@ -16,7 +16,7 @@ const Rating = ({ variant, ratingData }) => {
         <RatingPoints $variant={variant}>/10</RatingPoints>
       </RatingAverage>
       <RatingVotesCount $variant={variant}>
-        {ratingData.vote_count} votes
+        {ratingData?.vote_count} votes
       </RatingVotesCount>
     </RatingWrapper>
   );

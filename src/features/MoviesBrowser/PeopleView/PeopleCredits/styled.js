@@ -12,13 +12,13 @@ export const PeopleCreditsHeader = styled.h2`
     margin-top: 24px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    margin: 24px 16px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     max-width: 1199px;
     margin: 24px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    margin: 24px 16px;
   }
 `;
 
@@ -29,36 +29,43 @@ export const PeopleCreditsWrapper = styled.div`
   justify-content: center;
   gap: 24px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    margin: 0 8px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 1199px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 0 8px;
   }
 `;
 
 export const PeopleCreditsTile = styled.div`
-  background: ${({ theme }) => theme.color.white};
+  width: 324px;
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.color.white};
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.grey};
-  display: flex;
-  flex: 0 0 324px;
-  flex-flow: column;
-  max-width: 324px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transition: 1s;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    max-width: 154px;
-  }
-  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
-    max-width: 185px;
+  &:hover {
+    scale: 1.05;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     max-width: 260px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    max-width: 185px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    grid-template-columns: auto 1fr;
+    max-width: 475px;
+    width: 90%;
   }
 `;
 
@@ -72,13 +79,19 @@ export const PeopleCreditsPoster = styled.img`
   align-self: center;
   margin: 0;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    padding: 8px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
     max-width: 260px;
     height: 374px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    max-width: 185px;
+    height: 278px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    padding: 8px;
+    border-radius: 15px;
   }
 `;
 export const PeopleCreditsDefaultPoster = styled.div`
@@ -88,20 +101,21 @@ export const PeopleCreditsDefaultPoster = styled.div`
   margin: 16px;
   background: ${({ theme }) => theme.color.silver};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 292px;
-    height: 434px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 260px;
+    height: 342px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     padding: 12px;
-    max-height: 278px;
+    max-height: 246px;
     padding: 0;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    max-width: 260px;
-    height: 342px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    width: 168px;
+    height: 434px;
+    margin: 8px;
   }
 `;
 
@@ -113,12 +127,21 @@ export const PeopleCreditsPosterIcon = styled(PosterIcon)`
   top: 50%;
   transform: translate(-50%, -50%);
   width: 112px;
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    width: 100px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    width: 86px;
+  }
 `;
 
 export const PeopleCreditsContent = styled.div`
-  display: grid;
-  grid-gap: 8px 0;
-  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+  padding: 0 16px;
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding: 8px;
@@ -132,16 +155,12 @@ export const PeopleCreditsMovieTitle = styled.h3`
   word-break: break-word;
   white-space: normal;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 14px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 20px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 16px;
-  }
-
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 20px;
   }
 `;
 
@@ -149,16 +168,16 @@ export const PeopleCreditsData = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 13px;
   }
 `;
 
@@ -166,15 +185,15 @@ export const PeopleCreditsProductionYear = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    font-size: 16px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
   }
 
-  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
-    font-size: 16px;
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 13px;
   }
 `;

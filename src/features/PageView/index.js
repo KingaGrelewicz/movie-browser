@@ -6,20 +6,21 @@ import { Popular } from "../MoviesBrowser/PopularMovies/Popular";
 export const PageView = ({ status, repositories }) => {
   const query = useQueryParameter("query");
 
-  switch (status) {
-    case "initial":
-      return null;
+    switch (status) {
+        case "initial":
+            return null;
 
-    case "loading":
-      return <Loading />;
+        case "loading":
+            return <Loading />;
 
-    case "error":
-      return <Error />;
+        case "error":
+            return <Loading />;
 
-    case "success":
-      return <Popular query={query} />;
+        case "success":
+            return <Popular query={query} />
 
-    default:
-      throw new Error(`incorrect status: ${status}`);
-  }
+            default:
+                throw new Error (`incorrect status: ${status}`);
+    }
 };
+

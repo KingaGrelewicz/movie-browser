@@ -2,33 +2,46 @@ import styled from "styled-components";
 import { ReactComponent as PosterIcon } from "../../../../images/Profile.svg";
 import { mediaQuery } from "../../../../core/App/theme";
 
+export const CreditsContainer = styled.div`
+  max-width: 1368px;
+  margin: 0 auto;
+`;
+
 export const CreditsHeader = styled.h2`
   font-size: 36px;
   margin-top: 64px;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 20px;
-    margin-left: 16px;
-    margin-top: 24px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    margin: 24px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 24px 16px;
   }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 20px;
+    margin: 24px auto 12px 16px;
+  }
 `;
 
 export const CreditsWrapper = styled.div`
+  max-width: 1368px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    margin: 0 8px;
+  @media (max-width: ${mediaQuery.breakpoints.tabletHorizontalMax}px) {
+    max-width: 1199px;
   }
 
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     margin: 16px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    margin: 0 8px;
   }
 `;
 
@@ -40,6 +53,10 @@ export const CreditsTile = styled.div`
   margin: 10px;
   flex-flow: column;
   align-items: center;
+
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    flex: 0 0 152px;
+  }
 
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     flex: 0 0 120px;
@@ -60,18 +77,20 @@ export const CreditsDefaultPoster = styled.div`
   padding: 12px;
   width: 176px;
   height: 264px;
-  border-radius: 20px;
+  border-radius: 10px;
   margin: 12px;
   background: ${({ theme }) => theme.color.silver};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    width: 176px;
-    height: 264px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     padding: 12px;
-    max-height: 278px;
+    max-width: 128px;
+    max-height: 192px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    width: 100px;
+    height: 155px;
+    margin: 8px;
     padding: 0;
   }
 `;
@@ -90,6 +109,10 @@ export const CreditsContent = styled.div`
   grid-gap: 8px 0;
   padding: 16px;
 
+  @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
+    padding: 12px;
+  }
+
   @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding: 8px;
   }
@@ -101,12 +124,12 @@ export const CreditsName = styled.h3`
   margin: 0;
   text-align: center;
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 14px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 16px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 14px;
   }
 `;
 
@@ -115,11 +138,11 @@ export const CreditsData = styled.span`
   font-size: 18px;
   color: ${({ theme }) => theme.color.darkerGrey};
 
-  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
-    font-size: 13px;
-  }
-
   @media (max-width: ${mediaQuery.breakpoints.tabletVerticalMax}px) {
     font-size: 14px;
+  }
+
+  @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
+    font-size: 13px;
   }
 `;

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectPeopleDetailsState } from "./peopleDetailsSlice";
+import { selectPeopleDetailsState, fetchPeopleDetails, selectPeopleState } from "./peopleDetailsSlice";
 import {
   PeopleDetailsBiography,
   PeopleDetailsBirthDate,
@@ -13,29 +13,42 @@ import {
   PeopleDetailsWrapper,
 } from "./styled";
 
-const PeopleDetails = () => {
-  const { details } = useSelector(selectPeopleDetailsState);
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
+const PeopleDetails = ({peopleIp}) => {
+
+  const detailsPeople = useSelector(selectPeopleState);
+  const details = detailsPeople.details
+
+  const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(fetchPeopleDetails(peopleIp));
+  }, [peopleIp]);
+
+  
   return (
     <PeopleDetailsWrapper>
       <PeopleDetailsPhoto
-        src={`https://image.tmdb.org/t/p/original/${details.profile_path}`}
-        alt={details.name}
+        src={`https://image.tmdb.org/t/p/original/${details?.profile_path}`}
+        alt={details?.name}
       />
       <PeopleDetailsContent>
-        <PeopleDetailsHeader>{details.name}</PeopleDetailsHeader>
+        <PeopleDetailsHeader>{details?.name}</PeopleDetailsHeader>
         <PeopleDetailsData>
           <PeopleDetailsBirthDate>Date of birth:</PeopleDetailsBirthDate>
           <PeopleDetailsBirthDateContent>
-            {details.birthday}
+            {details?.birthday}
           </PeopleDetailsBirthDateContent>
           <PeopleDetailsBirthPlace>Place of birth:</PeopleDetailsBirthPlace>
           <PeopleDetailsBirthPlaceContent>
-            {details.place_of_birth}
+            {details?.place_of_birth}
           </PeopleDetailsBirthPlaceContent>
         </PeopleDetailsData>
       </PeopleDetailsContent>
-      <PeopleDetailsBiography>{details.biography}</PeopleDetailsBiography>
+      <PeopleDetailsBiography>{details?.biography}</PeopleDetailsBiography>
     </PeopleDetailsWrapper>
   );
 };

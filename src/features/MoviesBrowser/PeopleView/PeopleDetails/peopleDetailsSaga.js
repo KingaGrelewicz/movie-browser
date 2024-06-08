@@ -6,9 +6,9 @@ import {
 } from "./peopleDetailsSlice";
 import { getPeopleDetails } from "../PeopleDetails/peopleDetailsAPI";
 
-export function* fetchPeopleDetailsHandler() {
+export function* fetchPeopleDetailsHandler({payload: peopleIp}) {
   try {
-    const details = yield call(getPeopleDetails);
+    const details = yield call(getPeopleDetails, peopleIp);
     yield put(fetchPeopleDetailsSuccess(details));
   } catch (error) {
     yield put(fetchPeopleDetailsError());

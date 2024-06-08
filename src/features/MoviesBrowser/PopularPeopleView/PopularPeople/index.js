@@ -10,6 +10,9 @@ import {
   PopularPeopleWrapper,
 } from "./styled";
 import { selectPeopleByQuery } from "./popularPeopleSlice";
+import { Links } from "../../PopularMovies/TileMovie/styled";
+import { Paginations } from "../../../Pagination";
+import { setPages } from "./popularPeopleSlice";
 
 const PopularPeople = ({ query }) => {
   const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
@@ -32,10 +35,12 @@ const PopularPeople = ({ query }) => {
                 <PopularPeoplePosterIcon />
               </PopularPeopleDefaultPoster>
             )}
-            <PopularPeopleName>{people.name}</PopularPeopleName>
+            <Links to={`/people/${people.id}`}><PopularPeopleName>{people.name}</PopularPeopleName></Links>
+            
           </PopularPeopleTile>
         ))}
       </PopularPeopleWrapper>
+      <Paginations pages={pages} setPages={setPages}/>
     </>
   );
 };
