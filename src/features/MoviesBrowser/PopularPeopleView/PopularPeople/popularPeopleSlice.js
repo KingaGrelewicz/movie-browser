@@ -31,4 +31,15 @@ export const selectPopularPeopleData = (state) =>
 export const selectPopularPeopleStatus = (state) =>
   selectPopularPeopleState(state).status;
 
+export const selectPeopleByQuery = (state, query) => {
+  const data = selectPopularPeopleData(state)?.results || [];
+
+  if (!query || query.trim() === "") {
+      return data;
+  }
+
+  return data.filter(({name}) => 
+  name.toUpperCase().includes(query.trim().toUpperCase()));
+}
+
 export default popularPeopleSlice.reducer;
