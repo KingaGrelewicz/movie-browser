@@ -9,17 +9,13 @@ import {
   PopularPeopleTile,
   PopularPeopleWrapper,
 } from "./styled";
+import { selectPeopleByQuery } from "./popularPeopleSlice";
 import { Links } from "../../PopularMovies/TileMovie/styled";
-import { selectPopularPeopleState } from "./popularPeopleSlice";
 import { Paginations } from "../../../Pagination";
 import { setPages } from "./popularPeopleSlice";
 
-const PopularPeople = ({pages}) => {
-  const popularPeople = useSelector(selectPopularPeopleState);
-
-  const peopleArray = popularPeople.data
-    ? Object.values(popularPeople.data.results)
-    : [];
+const PopularPeople = ({ query }) => {
+  const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
 
   return (
     <>
@@ -27,7 +23,7 @@ const PopularPeople = ({pages}) => {
         <PopularPeopleHeader>POPULAR PEOPLE</PopularPeopleHeader>
       </PopularPeopleHeaderWrapper>
       <PopularPeopleWrapper>
-        {peopleArray.map((people) => (
+        {popularPeople.map((people) => (
           <PopularPeopleTile key={people.id}>
             {people.profile_path ? (
               <PopularPeoplePhoto
