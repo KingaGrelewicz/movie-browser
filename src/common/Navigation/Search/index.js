@@ -1,4 +1,4 @@
-import { Wrapper, Input } from "./styled";
+import { Wrapper, Input, SearchPic } from "./styled";
 import { useEffect, useState } from 'react';
 import { toPeople } from "./../../../core/App/routes";
 import { useOnInputChange } from './useOnInputChange';
@@ -21,6 +21,7 @@ const Search = () => {
 
   return (
     <Wrapper>
+      <SearchPic/>
       <Input 
         value={inputValue || ""}
         onChange={({ target: { value } }) => onInputChange({ newValue: value, isSearchForPeople })}
