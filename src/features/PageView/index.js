@@ -14,7 +14,7 @@ export const PageView = ({ status }) => {
             return <Loading />;
 
         case "error":
-            return <Loading />;
+            return <Error />;
 
         case "success":
             return <Popular query={query} />
