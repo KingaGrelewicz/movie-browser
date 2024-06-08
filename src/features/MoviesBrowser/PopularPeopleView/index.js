@@ -2,16 +2,16 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPeople,
-  selectPopularPeopleData,
   selectPopularPeopleStatus,
 } from "./PopularPeople/popularPeopleSlice";
 import { PopularPeopleStatus } from "./PopularPeopleStatus";
+import { useQueryParameter } from "./../../../common/Navigation/Search/queryParameter"
 
 const PopularPeopleView = () => {
   const dispatch = useDispatch();
+  const query = useQueryParameter("query");
 
   const peopleStatus = useSelector(selectPopularPeopleStatus);
-  const peopleData = useSelector(selectPopularPeopleData);
 
   useEffect(() => {
     dispatch(fetchPeople());
@@ -19,7 +19,7 @@ const PopularPeopleView = () => {
 
   return (
     <div>
-      <PopularPeopleStatus status={peopleStatus} repositories={peopleData} />
+      <PopularPeopleStatus status={peopleStatus} query={query} />
     </div>
   );
 };
