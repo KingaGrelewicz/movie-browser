@@ -6,9 +6,11 @@ import {
   selectPages,
 } from "./PopularPeople/popularPeopleSlice";
 import { PopularPeopleStatus } from "./PopularPeopleStatus";
+import { useQueryParameter } from "./../../../common/Navigation/Search/queryParameter"
 
 const PopularPeopleView = () => {
   const dispatch = useDispatch();
+  const query = useQueryParameter("query");
 
   const pages = useSelector(selectPages);
   const peopleStatus = useSelector(selectPopularPeopleStatus);
@@ -19,7 +21,7 @@ const PopularPeopleView = () => {
 
   return (
     <div>
-      <PopularPeopleStatus pages ={pages} status={peopleStatus} />
+      <PopularPeopleStatus pages ={pages} status={peopleStatus} query={query} />
     </div>
   );
 };

@@ -1,2 +1,2 @@
-export const toHomePage = () => "/movies";
+export const toMovies = () => "/movies";
 export const toPeople = () => "/people";
