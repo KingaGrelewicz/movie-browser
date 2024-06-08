@@ -3,7 +3,7 @@ import Error from "../ErrorPage";
 import { Loading } from "../LoadingPage";
 import { Popular } from "../MoviesBrowser/PopularMovies/Popular";
 
-export const PageView = ({ status, repositories }) => {
+export const PageView = ({ status, query }) => {
   const query = useQueryParameter("query");
 
     switch (status) {
@@ -23,4 +23,3 @@ export const PageView = ({ status, repositories }) => {
                 throw new Error (`incorrect status: ${status}`);
     }
 };
-

@@ -21,7 +21,7 @@ const PopularPeopleView = () => {
 
   return (
     <div>
-      <PopularPeopleStatus status={peopleStatus} query={query} />
+      <PopularPeopleStatus pages={pages} status={peopleStatus} query={query} />
     </div>
   );
 };
