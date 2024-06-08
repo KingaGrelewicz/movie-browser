@@ -18,13 +18,16 @@ import { setPages } from "./popularPeopleSlice";
 
 const PopularPeople = ({ pages, query }) => {
   const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
+  const numberOfPeople = popularPeople.length;
+
+  const title = query ? `Searches for "${query}" (${numberOfPeople} people)` : "POPULAR PEOPLE";
 
   return (
     <>
       {popularPeople.length > 0 ? (
         <>
           <PopularPeopleHeaderWrapper>
-            <PopularPeopleHeader>POPULAR PEOPLE</PopularPeopleHeader>
+            <PopularPeopleHeader>{title}</PopularPeopleHeader>
           </PopularPeopleHeaderWrapper>
           <PopularPeopleWrapper>
             {popularPeople.map((people) => (

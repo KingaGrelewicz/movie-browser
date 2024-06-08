@@ -7,20 +7,22 @@ import { NoResultView } from "./../../../NoResultView/index";
 
 export const Popular = ({ query }) => {
   const films = useSelector((state) => selectMoviesByQuery(state, query));
+  const numberOfMovies = films.length;
+
+  const title = query ? `Searches for "${query}" (${numberOfMovies} movies)` : "Popular People";
 
   return (
     <>
-      {films.length > 0 && (
+      {numberOfMovies > 0 ? (
         <>
-          <Title>Popular movies</Title>
+          <Title>{title}</Title>
           <Movies>
             {films.map((movie) => (
               <TileMovie key={movie.id} {...movie} />
             ))}
           </Movies>
         </>
-      )}
-      {films.length === 0 && (
+      ) : (
         <NoResultView query={query} />
       )}
     </>
