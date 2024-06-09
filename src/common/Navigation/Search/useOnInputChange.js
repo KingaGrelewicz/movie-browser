@@ -14,7 +14,6 @@ export const useOnInputChange = setInputValue => {
         setInputValue(newValue);
 
         timeoutRef.current = setTimeout(() => {
-            const searchQuery = buildQueryString({ query: newValue || undefined });
 
             history.push({
                 pathname: isSearchForPeople ? toPeople() : toMovies(),
