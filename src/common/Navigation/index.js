@@ -1,8 +1,6 @@
 import Search from "./Search";
 import { Wrapper, List, Item, StyledNavLink, PageTitle, Icon, NavigationBar } from "./styled";
-import { toMovies, toPeople } from "../../core/App/routes";
-
-const Navigation = () => {
+import { toMovies, toPeople } from "../../core/App/routes";const Navigation = () => {
   return (
     <NavigationBar>
       <List>
@@ -22,6 +20,4 @@ const Navigation = () => {
       </List>
     </NavigationBar>
   );
-};
-
-export default Navigation;
+};export default Navigation;
