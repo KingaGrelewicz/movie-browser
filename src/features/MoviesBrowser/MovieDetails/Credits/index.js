@@ -21,17 +21,19 @@ const Credits = ({ credits, type }) => {
         {credits.map((person) => (
           <CreditsTile key={person.id}>
             {person.profile_path ? (
+              <Links to={`/people/${person.id}`}>
               <CreditsPhoto
                 src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
                 alt="Person photo"
               />
+              </Links>
             ) : (
               <CreditsDefaultPoster>
                 <CreditsPosterIcon />
               </CreditsDefaultPoster>
             )}
             <CreditsContent>
-              <CreditsName><Links to={`/people/${person.id}`}>{person.name}</Links></CreditsName>
+              <CreditsName>{person.name}</CreditsName>
               <CreditsData>{person.character || person.job}</CreditsData>
             </CreditsContent>
           </CreditsTile>

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectPeopleDetailsState, fetchPeopleDetails, selectPeopleState } from "./peopleDetailsSlice";
+import { fetchPeopleDetails, selectPeopleState } from "./peopleDetailsSlice";
 import {
   PeopleDetailsBiography,
   PeopleDetailsBirthDate,

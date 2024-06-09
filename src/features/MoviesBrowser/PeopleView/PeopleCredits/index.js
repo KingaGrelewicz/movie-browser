@@ -21,18 +21,19 @@ const PeopleCredits = ({ type }) => {
     return credits.map((person) => (
       <PeopleCreditsTile key={person.id || person.credit_id}>
         {person.poster_path ? (
+          <Links to={`/movies/${person.id}`}>
           <PeopleCreditsPoster
             src={`https://image.tmdb.org/t/p/w185/${person.poster_path}`}
             alt="Person photo"
-          />
+          /></Links>
         ) : (
           <PeopleCreditsDefaultPoster>
             <PeopleCreditsPosterIcon />
           </PeopleCreditsDefaultPoster>
         )}
         <PeopleCreditsContent>
-          <PeopleCreditsMovieTitle><Links to={`/movies/${person.id}`}>
-            {person.original_title}</Links>
+          <PeopleCreditsMovieTitle>
+            {person.original_title}
           </PeopleCreditsMovieTitle>
           <PeopleCreditsData>
             {person.character || person.job}

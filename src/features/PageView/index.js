@@ -3,7 +3,7 @@ import Error from "../ErrorPage";
 import { Loading } from "../LoadingPage";
 import { Popular } from "../MoviesBrowser/PopularMovies/Popular";
 
-export const PageView = ({ status, query }) => {
+export const PageView = ({ status}) => {
   const query = useQueryParameter("query");
 
     switch (status) {
