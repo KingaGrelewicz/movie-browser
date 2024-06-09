@@ -4,10 +4,8 @@ import { TileMovie } from "../TileMovie";
 import { Title, Movies } from "./styled";
 import { selectMoviesByQuery } from "../../movieBrowserSlice";
 import { NoResultView } from "./../../../NoResultView/index";
-import { Paginations } from "../../../Pagination";
-import { setPages } from "../../movieBrowserSlice";
 
-export const Popular = ({ query, pages }) => {
+export const Popular = ({ query }) => {
   const films = useSelector((state) => selectMoviesByQuery(state, query));
   const numberOfMovies = films.length;
 
@@ -23,7 +21,6 @@ export const Popular = ({ query, pages }) => {
               <TileMovie key={movie.id} {...movie} />
             ))}
           </Movies>
-          <Paginations pages={pages} setPages={setPages} />
         </>
       ) : (
         <NoResultView query={query} />
