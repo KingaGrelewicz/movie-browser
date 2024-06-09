@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import { mediaQuery } from "../../core/App/theme";
-import { ReactComponent as MovieIcon } from "./Icon/CameraIcon.svg";
+import { ReactComponent as MovieIcon } from "./CameraIcon.svg";
 
 export const NavigationBar = styled.nav`
   background: ${({ theme }) => theme.color.black};
