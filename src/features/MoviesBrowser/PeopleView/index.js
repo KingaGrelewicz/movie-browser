@@ -7,6 +7,7 @@ import PeopleCredits from "./PeopleCredits";
 import PeopleDetails from "./PeopleDetails";
 import { Loading } from "../../LoadingPage";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import Error from "../../ErrorPage";
 
 
 const PeopleView = () => {
@@ -37,7 +38,7 @@ const PeopleView = () => {
        </>
       )}
       {details.status && peopleCredits.status === "error" && (
-        <div>Error loading details</div>
+        <Error />
       )}
     </>
   );
