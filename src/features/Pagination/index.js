@@ -1,5 +1,5 @@
-import { Container } from "./styled";
-import { OneApposition, Pages, PageNumber, LastApposition, IconButton, BackIconButton } from "./styled";
+import { Container, LastAppositionNext } from "./styled";
+import { OneApposition, OneAppositionFirst, Pages, PageNumber, LastApposition, IconButton, BackIconButton } from "./styled";
 import { useDispatch } from "react-redux";
 
 
@@ -31,15 +31,17 @@ export const Paginations = ({pages, setPages}) => {
       const firstPages = () => {
         dispatch(setPages(convertToOne(pages)));
       };
+
+      
  
       
     return(
         <Container>
-            <OneApposition onClick={firstPages} disabled={pages === 1}><IconButton />First</OneApposition>
-            <OneApposition onClick={decreasePages} disabled={pages === 1}><IconButton />Previous</OneApposition>
+            <OneAppositionFirst onClick={firstPages} disabled={pages === 1}><IconButton /></OneAppositionFirst>
+            <OneApposition onClick={decreasePages} disabled={pages === 1}><IconButton /></OneApposition>
             <Pages>Page <PageNumber>{pages}</PageNumber> of <PageNumber>500</PageNumber></Pages>
-            <LastApposition onClick={incrementPages} disabled={pages === 500}>Next<BackIconButton /></LastApposition>
-            <LastApposition onClick={lastPages} disabled={pages === 500}>Last<BackIconButton /></LastApposition>
+            <LastAppositionNext onClick={incrementPages} disabled={pages === 500}><BackIconButton /></LastAppositionNext>
+            <LastApposition onClick={lastPages} disabled={pages === 500}><BackIconButton/></LastApposition>
         </Container>
 
     );

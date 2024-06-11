@@ -35,7 +35,9 @@ export const TileMovie = ({
 			<Description>
 				<div>
 					<DescriptionTitle>
+					<Links to={`/movies/${id}`}>
 						{title}
+						</Links>
 					</DescriptionTitle>
 					<Date>{release_date}</Date>
 					<Genres genreIds={genre_ids} />

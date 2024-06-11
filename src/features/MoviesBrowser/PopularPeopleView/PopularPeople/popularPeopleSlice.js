@@ -1,6 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const popularPeopleSlice = createSlice({
+import { createSlice } from "@reduxjs/toolkit";const popularPeopleSlice = createSlice({
   name: "popularPeople",
   initialState: {
     status: "initial",
@@ -22,28 +20,34 @@ const popularPeopleSlice = createSlice({
     setPages: (state, { payload: pages }) => ({
       ...state,
       pages,
-  }),
+    }),
+    fetchSearchResults: (state) => {
+      state.status = "loading";
+      state.data = null;
+    },
+    fetchSearchResultsSuccess: (state, action) => {
+      state.status = "success";
+      state.data = action.payload;
+    },
+    fetchSearchResultsError: (state) => {
+      state.status = "error";
+      state.data = null;
+    },
   },
-});
-
-export const { fetchPeople, fetchPeopleSuccess, fetchPeopleError, setPages } =
-  popularPeopleSlice.actions;
-
-export const selectPopularPeopleState = (state) => state.popularPeople;
-
-export const selectPopularPeopleData = (state) =>selectPopularPeopleState(state).data;
-export const selectPages= (state) =>selectPopularPeopleState(state).pages;
-export const selectPopularPeopleStatus = (state) =>selectPopularPeopleState(state).status;
-
-export const selectPeopleByQuery = (state, query) => {
-  const data = selectPopularPeopleData(state)?.results || [];
-
-  if (!query || query.trim() === "") {
-      return data;
-  }
-
-  return data.filter(({name}) => 
-  name.toUpperCase().includes(query.trim().toUpperCase()));
-}
-
-export default popularPeopleSlice.reducer;
+});export const { 
+  fetchPeople, 
+  fetchPeopleSuccess, 
+  fetchPeopleError, 
+  setPages,
+  fetchSearchResults,
+  fetchSearchResultsSuccess,
+  fetchSearchResultsError 
+} = popularPeopleSlice.actions;export const selectPopularPeopleState = (state) => state.popularPeople;
+export const selectPopularPeopleData = (state) => selectPopularPeopleState(state).data;
+export const selectPages = (state) => selectPopularPeopleState(state).pages;
+export const selectPopularPeopleStatus = (state) => selectPopularPeopleState(state).status;export const selectPeopleByQuery = (state, query) => {
+  const data = selectPopularPeopleData(state)?.results || [];  if (!query || query.trim() === "") {
+    return data;
+  }  return data.filter(({ name }) => 
+    name.toUpperCase().includes(query.trim().toUpperCase()));
+};export default popularPeopleSlice.reducer;

@@ -33,7 +33,9 @@ const PeopleCredits = ({ type }) => {
         )}
         <PeopleCreditsContent>
           <PeopleCreditsMovieTitle>
+          <Links to={`/movies/${person.id}`}>
             {person.original_title}
+            </Links>
           </PeopleCreditsMovieTitle>
           <PeopleCreditsData>
             {person.character || person.job}

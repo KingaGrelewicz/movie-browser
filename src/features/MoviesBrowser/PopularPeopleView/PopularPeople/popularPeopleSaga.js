@@ -1,20 +1,27 @@
 import { call, put, takeLatest } from "redux-saga/effects";
-import {getPopularPeople} from "./popularPeopleAPI";
+import { getPopularPeople, searchPeople } from "./popularPeopleAPI";
 import {
   fetchPeople,
   fetchPeopleError,
   fetchPeopleSuccess,
-} from "./popularPeopleSlice";
-
-export function* fetchPopularPeopleHandler({payload: pageIp}) {
+  fetchSearchResults,
+  fetchSearchResultsSuccess,
+  fetchSearchResultsError,
+} from "./popularPeopleSlice";export function* fetchPopularPeopleHandler({ payload: pageIp }) {
   try {
     const people = yield call(getPopularPeople, pageIp);
     yield put(fetchPeopleSuccess(people));
   } catch (error) {
     yield put(fetchPeopleError());
   }
-}
-
-export function* popularPeopleSaga() {
+}export function* fetchSearchResultsHandler({ payload: { query, pageNumber } }) {
+  try {
+    const people = yield call(searchPeople, query, pageNumber);
+    yield put(fetchSearchResultsSuccess(people));
+  } catch (error) {
+    yield put(fetchSearchResultsError());
+  }
+}export function* popularPeopleSaga() {
   yield takeLatest(fetchPeople.type, fetchPopularPeopleHandler);
+  yield takeLatest(fetchSearchResults.type, fetchSearchResultsHandler);
 }

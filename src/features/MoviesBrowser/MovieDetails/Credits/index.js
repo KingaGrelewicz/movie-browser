@@ -33,7 +33,7 @@ const Credits = ({ credits, type }) => {
               </CreditsDefaultPoster>
             )}
             <CreditsContent>
-              <CreditsName>{person.name}</CreditsName>
+              <CreditsName><Links to={`/people/${person.id}`}>{person.name}</Links></CreditsName>
               <CreditsData>{person.character || person.job}</CreditsData>
             </CreditsContent>
           </CreditsTile>

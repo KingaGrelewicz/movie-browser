@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import {
-  PopularPeopleDefaultPoster,
-  PopularPeopleHeader,
-  PopularPeopleHeaderWrapper,
-  PopularPeopleName,
-  PopularPeoplePhoto,
-  PopularPeoplePosterIcon,
-  PopularPeopleTile,
-  PopularPeopleWrapper,
+	PopularPeopleDefaultPoster,
+	PopularPeopleHeader,
+	PopularPeopleHeaderWrapper,
+	PopularPeopleName,
+	PopularPeoplePhoto,
+	PopularPeoplePosterIcon,
+	PopularPeopleTile,
+	PopularPeopleWrapper,
 } from "./styled";
 import { selectPeopleByQuery } from "./popularPeopleSlice";
 import { Links } from "../../PopularMovies/TileMovie/styled";
@@ -34,16 +34,16 @@ const PopularPeople = ({ pages, query }) => {
 							<PopularPeopleTile key={people.id}>
 								{people.profile_path ? (
 									<Links to={`/people/${people.id}`}>
-									<PopularPeoplePhoto src={`https://image.tmdb.org/t/p/w185/${people.profile_path}`} alt={people.name} />
+										<PopularPeoplePhoto src={`https://image.tmdb.org/t/p/w185/${people.profile_path}`} alt={people.name} />
 									</Links>
 								) : (
 									<PopularPeopleDefaultPoster>
 										<PopularPeoplePosterIcon />
 									</PopularPeopleDefaultPoster>
 								)}
-								
-									<PopularPeopleName>{people.name}</PopularPeopleName>
-								
+
+								<PopularPeopleName><Links to={`/people/${people.id}`}>{people.name}</Links></PopularPeopleName>
+
 							</PopularPeopleTile>
 						))}
 					</PopularPeopleWrapper>

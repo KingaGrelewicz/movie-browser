@@ -1,6 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
-
-const movieBrowserSlice = createSlice({
+import { createSlice } from "@reduxjs/toolkit";const movieBrowserSlice = createSlice({
     name: "movieBrowser",
     initialState: {
         repositories: null,
@@ -26,31 +24,35 @@ const movieBrowserSlice = createSlice({
             ...state,
             pages,
         }),
+        fetchSearchResults: (state) => ({
+            ...state,
+            status: "loading",
+            repositories: null,
+        }),
+        fetchSearchResultsSuccess: (state, {payload: repositories}) => ({
+            ...state,
+            status: "success",
+            repositories,
+        }),
+        fetchSearchResultsError: () => ({
+            status: "error",
+            repositories: null,
+        }),
     },
-});
-
-export const {
-fetchRepositories,
-fetchRepositoriesSuccess,
-fetchRepositoriesError,
-setPages,
-}= movieBrowserSlice.actions;
-
-const selectMovieBrowserState = state => state.movieBrowser;
-
-export const selectRepositories = state => selectMovieBrowserState(state).repositories;
+});export const {
+  fetchRepositories,
+  fetchRepositoriesSuccess,
+  fetchRepositoriesError,
+  setPages,
+  fetchSearchResults,
+  fetchSearchResultsSuccess,
+  fetchSearchResultsError,
+} = movieBrowserSlice.actions;const selectMovieBrowserState = state => state.movieBrowser;export const selectRepositories = state => selectMovieBrowserState(state).repositories;
 export const selectPages = state => selectMovieBrowserState(state).pages;
-export const selectRepositoriesStatus = state => selectMovieBrowserState(state).status;
-
-export const selectMoviesByQuery = (state, query) => {
-    const repositories = selectRepositories(state)?.results || [];
-
-    if (!query || query.trim() === "") {
+export const selectRepositoriesStatus = state => selectMovieBrowserState(state).status;export const selectMoviesByQuery = (state, query) => {
+    const repositories = selectRepositories(state)?.results || [];    if (!query || query.trim() === "") {
         return repositories;
-    }
-
-    return repositories.filter(({title}) => 
+    }    return repositories.filter(({title}) => 
     title.toUpperCase().includes(query.trim().toUpperCase()));
-}
-
+};
 export default movieBrowserSlice.reducer;

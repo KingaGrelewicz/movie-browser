@@ -4,6 +4,6 @@ export const useQueryParameter = key => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const value = searchParams.get(key);
-
+    
     return value;
 }

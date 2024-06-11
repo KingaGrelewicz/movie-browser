@@ -5,7 +5,7 @@ const getPeopleCredits = async (peopleIp) => {
   const response = await axios.get(
     `https://api.themoviedb.org/3/person/${peopleIp}/combined_credits?api_key=${APIkey}`
   );
-  console.log("getPeopleCredits", response.data);
+
   return response.data;
 };
 export default getPeopleCredits;
