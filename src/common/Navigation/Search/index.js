@@ -7,10 +7,14 @@ import { useQueryParameter } from './queryParameter';
 import { useLocation } from "react-router-dom";
 import { fetchSearchResults as fetchPeopleSearchResults, fetchPeople} from "./../../../features/MoviesBrowser/PopularPeopleView/PopularPeople/popularPeopleSlice";
 import { fetchSearchResults as fetchMovieSearchResults, fetchRepositories} from "./../../../features/MoviesBrowser/movieBrowserSlice";const Search = () => {
+  
   const location = useLocation();
   const query = useQueryParameter("query");
-  const dispatch = useDispatch();  const [inputValue, setInputValue] = useState(query);
-  const onInputChange = useOnInputChange(setInputValue);  const isSearchForPeople = location.pathname.startsWith(toPeople());  useEffect(() => {
+  const dispatch = useDispatch();  
+  const [inputValue, setInputValue] = useState(query);
+  const onInputChange = useOnInputChange(setInputValue);  
+  const isSearchForPeople = location.pathname.startsWith(toPeople());  
+  useEffect(() => {
     setInputValue(query);
     if (query) {
       if (isSearchForPeople) {
@@ -25,7 +29,9 @@ import { fetchSearchResults as fetchMovieSearchResults, fetchRepositories} from 
         dispatch(fetchRepositories(1));
       }
     }
-  }, [query, dispatch, isSearchForPeople]);  return (
+  }, [query, dispatch]);  
+  
+  return (
     <Wrapper>
       <SearchPic/>
       <Input 
