@@ -15,12 +15,15 @@ import { Paginations } from "../../../Pagination";
 import { setPages } from "./popularPeopleSlice";
 import { NoResultView } from "../../../NoResultView";
 
-
 const PopularPeople = ({ pages, query }) => {
-	const popularPeople = useSelector((state) => selectPeopleByQuery(state, query));
-	const numberOfPeople = popularPeople.length;
+  const popularPeople = useSelector((state) =>
+    selectPeopleByQuery(state, query)
+  );
+  const numberOfPeople = popularPeople.length;
 
-	const title = query ? `Searches for "${query}" (${numberOfPeople} people)` : "POPULAR PEOPLE";
+  const title = query
+    ? `Searches for "${query}" (${numberOfPeople} people)`
+    : "Popular People";
 
 	return (
 		<>

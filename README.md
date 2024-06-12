@@ -6,6 +6,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 You can check out the themo here [Demo](https://kingagrelewicz.github.io/movies-browser/)
 
+![Movies browser Gif](/src/images/movies-browser.gif)
+
+## Technologies
+
+During creating the website I was using Visual Studio Code,
+
+- JavaScript
+- ES6+ Features
+- Axios
+- Redux
+- Router
+- Create React App
+- Styled Components
+- HTML
+- CSS
+
+The website was created to response correctly on desktop, tablets, and mobile devices thanks to using media queries. We used fonts available on Google Fonts, Sharing debugger, flexbox and grid.
+
 ## Available Scripts
 
 In the project directory, you can run:
