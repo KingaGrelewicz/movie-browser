@@ -1,5 +1,5 @@
 import { Wrapper, Input, SearchPic } from "./styled";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from 'react';
 import { toPeople } from "./../../../core/App/routes";
 import { useOnInputChange } from './useOnInputChange';

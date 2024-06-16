@@ -1,10 +1,10 @@
 import { Container, LastAppositionNext } from "./styled";
 import { OneApposition, OneAppositionFirst, Pages, PageNumber, LastApposition, IconButton, BackIconButton } from "./styled";
 import { useDispatch } from "react-redux";
-
+import { useQueryParameter } from "../../common/Navigation/Search/queryParameter";
 
 export const Paginations = ({pages, setPages}) => {
-
+  const query = useQueryParameter("query");
 
     const dispatch = useDispatch();
 
@@ -33,17 +33,19 @@ export const Paginations = ({pages, setPages}) => {
       };
 
       
- 
+      if(!query) {
+        return(
+          <Container>
+              <OneAppositionFirst onClick={firstPages} disabled={pages === 1}><IconButton disabled={pages === 1}/><IconButton /></OneAppositionFirst>
+              <OneApposition onClick={decreasePages} disabled={pages === 1}><IconButton /></OneApposition>
+              <Pages>Page <PageNumber>{pages}</PageNumber> of <PageNumber>500</PageNumber></Pages>
+              <LastAppositionNext onClick={incrementPages} disabled={pages === 500}><BackIconButton /></LastAppositionNext>
+              <LastApposition onClick={lastPages} disabled={pages === 500}><BackIconButton/><BackIconButton/></LastApposition>
+          </Container>
+  
+      );
+      }
       
-    return(
-        <Container>
-            <OneAppositionFirst onClick={firstPages} disabled={pages === 1}><IconButton /></OneAppositionFirst>
-            <OneApposition onClick={decreasePages} disabled={pages === 1}><IconButton /></OneApposition>
-            <Pages>Page <PageNumber>{pages}</PageNumber> of <PageNumber>500</PageNumber></Pages>
-            <LastAppositionNext onClick={incrementPages} disabled={pages === 500}><BackIconButton /></LastAppositionNext>
-            <LastApposition onClick={lastPages} disabled={pages === 500}><BackIconButton/></LastApposition>
-        </Container>
-
-    );
+  
 }
 

@@ -75,7 +75,7 @@ cursor: pointer;
 
 @media (max-width: ${mediaQuery.breakpoints.mobileMax}px) {
     padding-left: 12px;
-padding-right: 12px;
+    padding-right: 12px;
     &::after {
       content: '';
     }
@@ -167,9 +167,11 @@ color: black;
 `
 
 export const IconButton = styled(Icon)`
-margin-right: 8px;
+margin-right: 4px;
+
 `
+
 export const BackIconButton = styled(IconBack)`
-margin-left: 8px;
+margin-left: 4px;
 order: 2;
 `

@@ -8,7 +8,7 @@ export const Popular = ({ query }) => {
   const films = useSelector((state) => selectMoviesByQuery(state, query));
   const numberOfMovies = films.length;
 
-  const title = query ? `Searches for "${query}" (${numberOfMovies} movies)` : "Popular People";
+
 
   return (
     <>
